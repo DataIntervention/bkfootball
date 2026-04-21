@@ -10,271 +10,144 @@
 <title>BK Knights 2026 Football Schedule</title>
 <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgZmlsbD0iIzFhMjc0NCIgcng9IjgwIi8+PHBhdGggZD0iTTI1NiA2MEwxMDAgMTQwdjE0MGMwIDkwIDY2IDE2OCAxNTYgMTk0IDkwLTI2IDE1Ni0xMDQgMTU2LTE5NFYxNDBMMjU2IDYweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzhhODRiIiBzdHJva2Utd2lkdGg9IjE2Ii8+PHRleHQgeD0iMjU2IiB5PSIyOTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjEzMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNjOGE4NGIiPkJLPC90ZXh0Pjx0ZXh0IHg9IjI1NiIgeT0iNDIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI1NSIgZmlsbD0id2hpdGUiPktOSUdIVFM8L3RleHQ+PC9zdmc+">
 <style>
-  :root {
-    --navy: #1a2744;
-    --navy-light: #2a4a6b;
-    --gold: #c8a84b;
-    --gold-light: #f5e89a;
-    --gold-bg: #fef8e0;
-    --contact: #b8d4f0;
-    --training: #b8e0b8;
-    --scrimmage: #fef0a0;
-    --special: #fcd8a0;
-    --off: #e0e0e0;
-    --white: #ffffff;
-    --text: #111111;
-    --text-light: #555555;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #f0f0f0;
-    color: var(--text);
-    font-size: 14px;
-  }
+:root {
+  --navy:#1a2744; --gold:#c8a84b; --gold-bg:#fef8e0;
+  --contact:#b8d4f0; --training:#b8e0b8; --scrimmage:#fef0a0;
+  --special:#fcd8a0; --off:#e0e0e0; --white:#ffffff; --text:#111;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f0f0f0;color:var(--text);font-size:14px;}
 
-  /* ── HEADER ── */
-  .app-header {
-    background: var(--navy);
-    color: white;
-    padding: 12px 14px 10px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-  }
-  .header-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  .school-name { font-size: 16px; font-weight: 700; color: var(--gold); }
-  .season-label { font-size: 10px; color: #aabbd4; margin-top: 2px; }
-  .today-badge {
-    background: var(--gold);
-    color: var(--navy);
-    font-size: 11px;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
+/* HEADER */
+.hdr{background:var(--navy);padding:12px 14px 10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.4);}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.school{font-size:16px;font-weight:700;color:var(--gold);}
+.season{font-size:10px;color:#aabbd4;margin-top:2px;}
+.tbadge{background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;white-space:nowrap;}
 
-  /* ── TABS ── */
-  .level-tabs {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5px;
-  }
-  .tab-btn {
-    background: rgba(255,255,255,0.12);
-    border: 1.5px solid rgba(200,168,75,0.3);
-    color: #aabbd4;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 7px 2px;
-    border-radius: 6px;
-    cursor: pointer;
-    text-align: center;
-    letter-spacing: 0.3px;
-    transition: all 0.15s;
-  }
-  .tab-btn.active { color: var(--navy); }
-  .tab-btn.varsity.active  { background: var(--gold); border-color: var(--gold); }
-  .tab-btn.jv.active       { background: #4a9a4a; border-color: #4a9a4a; color: white; }
-  .tab-btn.frosh.active    { background: #aa3333; border-color: #aa3333; color: white; }
-  .tab-btn.games.active    { background: var(--gold); border-color: var(--gold); }
+/* TABS */
+.tabs{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px;}
+.tab{background:rgba(255,255,255,.12);border:1.5px solid rgba(200,168,75,.3);color:#aabbd4;font-size:11px;font-weight:700;padding:7px 2px;border-radius:6px;cursor:pointer;text-align:center;letter-spacing:.3px;}
+.tab.active{color:var(--navy);}
+.tab.tv.active{background:var(--gold);border-color:var(--gold);}
+.tab.tj.active{background:#4a9a4a;border-color:#4a9a4a;color:#fff;}
+.tab.tf.active{background:#aa3333;border-color:#aa3333;color:#fff;}
+.tab.tg.active{background:var(--gold);border-color:var(--gold);}
 
-  /* ── GLOSSARY ── */
-  .glossary-wrap { background: var(--gold-bg); border-bottom: 2px solid var(--gold); }
-  .glossary-toggle {
-    width: 100%; background: none; border: none;
-    padding: 10px 16px; text-align: left;
-    font-size: 12px; font-weight: 700; color: var(--navy);
-    cursor: pointer; display: flex; align-items: center; justify-content: space-between;
-  }
-  .glossary-content { display: none; padding: 0 16px 12px; font-size: 12px; line-height: 1.8; color: #333; }
-  .glossary-content.open { display: block; }
-  .glossary-content b { color: var(--navy); }
+/* GLOSSARY */
+.glos{background:var(--gold-bg);border-bottom:2px solid var(--gold);}
+.gtog{width:100%;background:none;border:none;padding:10px 16px;text-align:left;font-size:12px;font-weight:700;color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:space-between;}
+.gcnt{display:none;padding:0 16px 12px;font-size:12px;line-height:1.8;color:#333;}
+.gcnt.open{display:block;}
+.gcnt b{color:var(--navy);}
 
-  /* ── COLOR LEGEND ── */
-  .legend {
-    background: white; border-bottom: 1px solid #ddd;
-    padding: 8px 14px; display: flex; flex-wrap: wrap; gap: 7px 12px;
-  }
-  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #444; }
-  .legend-dot { width: 13px; height: 13px; border-radius: 3px; border: 1px solid rgba(0,0,0,0.15); flex-shrink: 0; }
+/* LEGEND */
+.leg{background:#fff;border-bottom:1px solid #ddd;padding:8px 14px;display:flex;flex-wrap:wrap;gap:7px 12px;}
+.li{display:flex;align-items:center;gap:5px;font-size:11px;color:#444;}
+.ld{width:13px;height:13px;border-radius:3px;border:1px solid rgba(0,0,0,.15);flex-shrink:0;}
 
-  /* ── PRINT BAR ── */
-  .print-bar { background: white; border-bottom: 1px solid #ddd; padding: 7px 14px; text-align: right; }
-  .print-btn {
-    background: var(--navy); color: var(--gold);
-    border: none; font-size: 12px; font-weight: 700;
-    padding: 6px 14px; border-radius: 5px; cursor: pointer;
-  }
+/* PRINT BAR */
+.pb{background:#fff;border-bottom:1px solid #ddd;padding:7px 14px;text-align:right;}
+.pbtn{background:var(--navy);color:var(--gold);border:none;font-size:12px;font-weight:700;padding:6px 14px;border-radius:5px;cursor:pointer;}
 
-  /* ── SCHEDULE PANELS ── */
-  .level-panel { display: none; }
-  .level-panel.active { display: block; }
+/* PANELS */
+.panel{display:none;}
+.panel.active{display:block;}
 
-  .phase-header {
-    background: var(--navy); color: var(--gold);
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 1.5px; text-transform: uppercase;
-    padding: 7px 14px; margin-top: 2px;
-  }
+/* PHASE HEADER */
+.ph{background:var(--navy);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 14px;margin-top:2px;}
 
-  .day-card {
-    background: white; border-bottom: 1px solid #e8e8e8;
-    padding: 9px 13px;
-    display: grid; grid-template-columns: 90px 1fr;
-    gap: 0 10px; align-items: start;
-  }
-  .day-card.contact   { background: var(--contact); }
-  .day-card.training  { background: var(--training); }
-  .day-card.scrimmage { background: var(--scrimmage); }
-  .day-card.special   { background: var(--special); }
-  .day-card.off       { background: var(--off); }
-  .day-card.today-row { background: var(--gold) !important; border-left: 5px solid var(--navy); }
-  .day-card.today-row .day-date,
-  .day-card.today-row .day-time,
-  .day-card.today-row .day-activity,
-  .day-card.today-row .day-gear { color: var(--navy) !important; }
+/* DAY CARD */
+.dc{background:#fff;border-bottom:1px solid #e8e8e8;padding:9px 13px;display:grid;grid-template-columns:90px 1fr;gap:0 10px;align-items:start;}
+.dc.contact{background:var(--contact);}
+.dc.training{background:var(--training);}
+.dc.scrimmage{background:var(--scrimmage);}
+.dc.special{background:var(--special);}
+.dc.off{background:var(--off);}
+.dc.today-row{background:var(--gold)!important;border-left:5px solid var(--navy);}
+.dc.today-row .dd,.dc.today-row .dt,.dc.today-row .da,.dc.today-row .dg{color:var(--navy)!important;}
+.tl{font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--navy);background:#fff;border-radius:3px;padding:1px 5px;display:inline-block;margin-bottom:2px;}
+.dd{font-size:12px;font-weight:700;color:var(--navy);line-height:1.4;}
+.dt{font-size:11px;color:#555;margin-top:2px;font-weight:600;}
+.dg{font-size:10px;color:#777;font-style:italic;margin-top:2px;}
+.da{font-size:13px;color:var(--text);line-height:1.45;}
+.da strong{color:var(--navy);}
+.da .warn{color:#c00;font-weight:700;}
+.da .note{font-size:11px;color:#555;}
 
-  .today-label {
-    font-size: 9px; font-weight: 900; letter-spacing: 1px;
-    text-transform: uppercase; color: var(--navy);
-    background: white; border-radius: 3px;
-    padding: 1px 5px; display: inline-block; margin-bottom: 2px;
-  }
-  .day-date { font-size: 12px; font-weight: 700; color: var(--navy); line-height: 1.4; }
-  .day-time { font-size: 11px; color: var(--text-light); margin-top: 2px; font-weight: 600; }
-  .day-gear { font-size: 10px; color: #777; font-style: italic; margin-top: 2px; }
-  .day-activity { font-size: 13px; color: var(--text); line-height: 1.45; }
-  .day-activity strong { color: var(--navy); }
-  .day-activity .warn { color: #c00; font-weight: 700; }
-  .day-activity .note { font-size: 11px; color: #555; }
+/* GAMES */
+.ghdr{background:var(--navy);padding:20px 16px 16px;text-align:center;border-bottom:4px solid var(--gold);}
+.gtitle{color:var(--gold);font-size:22px;font-weight:900;letter-spacing:2px;text-transform:uppercase;}
+.gsub{color:#aabbd4;font-size:12px;margin-top:4px;}
+.gleg{display:flex;gap:20px;justify-content:center;padding:10px;background:#f8f8f8;border-bottom:1px solid #ddd;}
+.gli{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;}
+.hdot{width:16px;height:16px;border-radius:3px;background:var(--gold);}
+.adot{width:16px;height:16px;border-radius:3px;background:#fff;border:2px solid #999;}
 
-  /* ── GAME SCHEDULE ── */
-  .games-header {
-    background: var(--navy);
-    padding: 20px 16px 16px;
-    text-align: center;
-    border-bottom: 4px solid var(--gold);
-  }
-  .games-title { color: var(--gold); font-size: 22px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
-  .games-subtitle { color: #aabbd4; font-size: 12px; margin-top: 4px; }
+.gc{background:#fff;border-bottom:2px solid #e8e8e8;padding:14px 16px;display:grid;grid-template-columns:58px 1fr auto;align-items:center;gap:12px;}
+.gc.home{border-left:5px solid var(--gold);}
+.gc.away{border-left:5px solid #999;}
+.gc.nextgame{background:#fef8e0;}
 
-  .games-legend {
-    display: flex; gap: 16px; justify-content: center;
-    padding: 10px; background: #f8f8f8; border-bottom: 1px solid #ddd;
-  }
-  .games-legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; }
-  .home-dot { width: 14px; height: 14px; border-radius: 2px; background: var(--gold); }
-  .away-dot { width: 14px; height: 14px; border-radius: 2px; background: white; border: 2px solid #999; }
+.gdb{text-align:center;}
+.gmo{font-size:10px;font-weight:700;text-transform:uppercase;color:#888;letter-spacing:1px;}
+.gdy{font-size:28px;font-weight:900;color:var(--navy);line-height:1;}
+.gdw{font-size:10px;color:#888;margin-top:2px;}
 
-  .game-card {
-    background: white;
-    border-bottom: 2px solid #e8e8e8;
-    padding: 14px 16px;
-    display: grid;
-    grid-template-columns: 56px 1fr auto;
-    align-items: center;
-    gap: 12px;
-  }
-  .game-card.home-game { border-left: 5px solid var(--gold); }
-  .game-card.away-game { border-left: 5px solid #999; }
-  .game-card.next-game { background: #fef8e0; }
+.gopp{font-size:16px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;}
+.gloc{font-size:11px;color:#666;margin-top:3px;}
+.gtm{font-size:11px;color:#888;margin-top:2px;}
 
-  .game-date-block { text-align: center; }
-  .game-month { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #888; letter-spacing: 1px; }
-  .game-day { font-size: 28px; font-weight: 900; color: var(--navy); line-height: 1; }
-  .game-dow { font-size: 10px; color: #888; margin-top: 2px; }
+.gbadge{font-size:10px;font-weight:800;text-transform:uppercase;padding:5px 9px;border-radius:4px;text-align:center;min-width:46px;letter-spacing:.5px;display:block;}
+.bh{background:var(--gold);color:var(--navy);}
+.ba{background:#e8e8e8;color:#555;}
+.bn{background:#c00;color:#fff;font-size:9px;margin-top:4px;}
 
-  .game-info {}
-  .game-opponent { font-size: 16px; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; }
-  .game-location { font-size: 11px; color: #666; margin-top: 3px; }
-  .game-time { font-size: 11px; color: #888; margin-top: 2px; }
+.gstat{background:var(--navy);color:#fff;padding:12px 16px;text-align:center;font-size:13px;}
+.gstat b{color:var(--gold);}
 
-  .game-badge {
-    font-size: 10px; font-weight: 800; text-transform: uppercase;
-    padding: 4px 8px; border-radius: 4px; text-align: center;
-    min-width: 44px; letter-spacing: 0.5px;
-  }
-  .badge-home { background: var(--gold); color: var(--navy); }
-  .badge-away { background: #e8e8e8; color: #555; }
-  .badge-tba  { background: var(--navy); color: var(--gold); }
-  .badge-next { background: #c00; color: white; font-size: 9px; }
+.playoffs{background:var(--navy);padding:20px 16px;text-align:center;border-top:3px solid var(--gold);}
+.pltitle{color:var(--gold);font-size:18px;font-weight:900;letter-spacing:2px;}
+.plsub{color:#aabbd4;font-size:12px;margin-top:6px;}
 
-  .games-record {
-    background: var(--navy); color: white;
-    padding: 12px 16px; text-align: center;
-    font-size: 13px;
-  }
-  .games-record b { color: var(--gold); }
+/* FOOTER */
+.ftr{background:var(--navy);color:#aabbd4;text-align:center;padding:16px;font-size:11px;margin-top:4px;}
+.ftr a{color:var(--gold);text-decoration:none;}
 
-  .playoffs-card {
-    background: var(--navy);
-    padding: 20px 16px;
-    text-align: center;
-    border-top: 3px solid var(--gold);
-  }
-  .playoffs-card .pl-title { color: var(--gold); font-size: 18px; font-weight: 900; letter-spacing: 2px; }
-  .playoffs-card .pl-sub { color: #aabbd4; font-size: 12px; margin-top: 6px; }
-
-  /* ── FOOTER ── */
-  .app-footer {
-    background: var(--navy); color: #aabbd4;
-    text-align: center; padding: 16px; font-size: 11px; margin-top: 4px;
-  }
-  .app-footer a { color: var(--gold); text-decoration: none; }
-
-  /* ── PRINT ── */
-  @media print {
-    .app-header, .level-tabs { position: static !important; }
-    .level-panel { display: block !important; }
-    .phase-header { break-after: avoid; }
-    .day-card { break-inside: avoid; }
-    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-    .print-btn, .tab-btn { display: none; }
-    .game-card { break-inside: avoid; }
-  }
+@media print{
+  .hdr,.tabs{position:static!important;}
+  .panel{display:block!important;}
+  .ph{break-after:avoid;}
+  .dc{break-inside:avoid;}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+  .pbtn,.tab{display:none;}
+}
 </style>
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
-<div class="app-header">
-  <div class="header-top">
-    <div>
-      <div class="school-name">⚔ Bishop Kelly Knights</div>
-      <div class="season-label">2026 Football — Spring/Summer &amp; Game Schedule</div>
-    </div>
-    <div class="today-badge" id="todayBadge">Loading...</div>
+<div class="hdr">
+  <div class="hdr-top">
+    <div><div class="school">⚔ Bishop Kelly Knights</div><div class="season">2026 Football — Spring/Summer &amp; Game Schedule</div></div>
+    <div class="tbadge" id="tbadge">Loading...</div>
   </div>
-  <div class="level-tabs">
-    <button class="tab-btn varsity active" onclick="showLevel('varsity')">VARSITY</button>
-    <button class="tab-btn jv"             onclick="showLevel('jv')">JV</button>
-    <button class="tab-btn frosh"          onclick="showLevel('frosh')">FRESHMAN</button>
-    <button class="tab-btn games"          onclick="showLevel('games')">🏈 GAMES</button>
+  <div class="tabs">
+    <button class="tab tv active" onclick="show('v')">VARSITY</button>
+    <button class="tab tj" onclick="show('j')">JV</button>
+    <button class="tab tf" onclick="show('f')">FRESHMAN</button>
+    <button class="tab tg" onclick="show('g')">🏈 GAMES</button>
   </div>
 </div>
 
-<!-- ══ GLOSSARY ══ -->
-<div class="glossary-wrap" id="glossaryWrap">
-  <button class="glossary-toggle" onclick="toggleGlossary()">
-    📖 What do these terms mean? Tap to expand
-    <span id="glossArrow">▼</span>
-  </button>
-  <div class="glossary-content" id="glossaryContent">
+<div class="glos" id="glossWrap">
+  <button class="gtog" onclick="toggleG()">📖 What do these terms mean? Tap to expand <span id="garr">▼</span></button>
+  <div class="gcnt" id="gcnt">
     <b>BK Gear:</b> Black shorts + White OR Black t-shirt. Offense wears White. Defense wears Black.<br>
-    <b>Helmets:</b> Practice with helmets only — no shoulder pads.<br>
+    <b>Helmets:</b> Helmets only — no shoulder pads.<br>
     <b>Half Shell:</b> Helmet + shoulder pads, no full pads.<br>
-    <b>Full Pads:</b> Complete uniform — helmet, shoulder pads, full pads. Game-ready.<br>
-    <b>Comp Gear:</b> Competition uniform (for 7v7 events).<br>
-    <b>Frosh / Freshman:</b> 9th grade players.<br>
-    <b>JV:</b> Junior Varsity players.<br>
+    <b>Full Pads:</b> Complete uniform. Game-ready.<br>
+    <b>Comp Gear:</b> Competition uniform for 7v7 events.<br>
+    <b>Frosh/Freshman:</b> 9th grade players.<br>
     <b>Bigs:</b> Linemen (offensive and defensive).<br>
     <b>Skill Players:</b> QB, RB, WR, DB positions.<br>
     <b>Night of Knights:</b> Team bonding event — off-site. Details TBD.<br>
@@ -287,734 +160,393 @@
   </div>
 </div>
 
-<!-- ══ COLOR LEGEND ══ -->
-<div class="legend" id="colorLegend">
-  <div class="legend-item"><div class="legend-dot" style="background:#b8d4f0"></div>Pads/Contact</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#b8e0b8"></div>Weight Room/Training</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#fef0a0"></div>Scrimmage/Game</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#fcd8a0"></div>Special Event</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#e0e0e0"></div>OFF</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#c8a84b"></div>TODAY</div>
+<div class="leg" id="legWrap">
+  <div class="li"><div class="ld" style="background:#b8d4f0"></div>Pads/Contact</div>
+  <div class="li"><div class="ld" style="background:#b8e0b8"></div>Weight Room/Training</div>
+  <div class="li"><div class="ld" style="background:#fef0a0"></div>Scrimmage/Game</div>
+  <div class="li"><div class="ld" style="background:#fcd8a0"></div>Special Event</div>
+  <div class="li"><div class="ld" style="background:#e0e0e0"></div>OFF</div>
+  <div class="li"><div class="ld" style="background:#c8a84b"></div>TODAY</div>
 </div>
 
-<!-- Print button -->
-<div class="print-bar" id="printBar">
-  <button class="print-btn" onclick="window.print()">🖨 Print Schedule</button>
-</div>
+<div class="pb" id="pbWrap"><button class="pbtn" onclick="window.print()">🖨 Print Schedule</button></div>
 
-<!-- ══════════════════════════════════════════════════════════ -->
-<!--  VARSITY PANEL                                             -->
-<!-- ══════════════════════════════════════════════════════════ -->
-<div class="level-panel active" id="panel-varsity">
+<!-- ═══════════════════════════════════════
+     VARSITY
+═══════════════════════════════════════ -->
+<div class="panel active" id="pv">
 
-  <div class="phase-header">Phase 1 — Last Days of School (May 18–22)</div>
-  <div class="day-card training" data-date="2026-05-18">
-    <div><div class="day-date">Mon–Thu<br>May 18–21</div><div class="day-time">11:55 AM–1:45 PM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">Lunch on own 11:55–12:35 · Team meeting 12:35–12:45 · <strong>Weight room / Combine 12:45–1:45</strong></div>
-  </div>
-  <div class="day-card" data-date="2026-05-22">
-    <div><div class="day-date">Fri, May 22</div><div class="day-time">6:00 PM</div><div class="day-gear">School clothes</div></div>
-    <div class="day-activity"><strong>Graduation Ceremony</strong></div>
-  </div>
-  <div class="day-card off" data-date="2026-05-23">
-    <div><div class="day-date">Sat–Mon<br>May 23–25</div><div class="day-time">OFF</div></div>
-    <div class="day-activity">Memorial Day Weekend — No practice</div>
-  </div>
+<div class="ph">Phase 1 — Last Days of School (May 18–22)</div>
+<div class="dc training" data-date="2026-05-18"><div><div class="dd">Mon–Thu<br>May 18–21</div><div class="dt">11:55 AM–1:45 PM</div><div class="dg">BK Gear</div></div><div class="da">Lunch on own 11:55–12:35 · Team meeting 12:35–12:45 · <strong>Weight room/Combine 12:45–1:45</strong></div></div>
+<div class="dc" data-date="2026-05-22"><div><div class="dd">Fri, May 22</div><div class="dt">6:00 PM</div><div class="dg">School clothes</div></div><div class="da"><strong>Graduation Ceremony</strong></div></div>
+<div class="dc off" data-date="2026-05-23"><div><div class="dd">Sat–Mon May 23–25</div><div class="dt">OFF</div></div><div class="da">Memorial Day Weekend — No practice</div></div>
 
-  <div class="phase-header">Phase 2 — Early Summer Workouts (May 26 – June 7)</div>
-  <div class="day-card training" data-date="2026-05-26">
-    <div><div class="day-date">Tue, May 26</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>☀ FIRST DAY OF SUMMER.</strong> Bigs: weight room · Skill: turf · All positions train together</div>
-  </div>
-  <div class="day-card training" data-date="2026-05-27">
-    <div><div class="day-date">Wed–Thu May 27–28</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">Bigs: weight room · Skill: turf · Skill FB + Big Train</div>
-  </div>
-  <div class="day-card off" data-date="2026-05-29">
-    <div><div class="day-date">Fri–Sun May 29–31</div><div class="day-time">OFF</div></div>
-    <div class="day-activity">Weekend — No practice</div>
-  </div>
-  <div class="day-card training" data-date="2026-06-01">
-    <div><div class="day-date">Mon–Thu June 1–4</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">Bigs: weight room · Skill: turf · Skill FB + Big Train (same all four days)</div>
-  </div>
-  <div class="day-card off" data-date="2026-06-05">
-    <div><div class="day-date">Fri–Sun June 5–7</div><div class="day-time">OFF</div></div>
-    <div class="day-activity">Weekend — No practice</div>
-  </div>
+<div class="ph">Phase 2 — Early Summer Workouts (May 26 – June 7)</div>
+<div class="dc training" data-date="2026-05-26"><div><div class="dd">Tue, May 26</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>☀ FIRST DAY OF SUMMER.</strong> Bigs: weight room · Skill: turf · All positions train together</div></div>
+<div class="dc training" data-date="2026-05-27"><div><div class="dd">Wed–Thu May 27–28</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Bigs: weight room · Skill: turf · Skill FB + Big Train</div></div>
+<div class="dc off" data-date="2026-05-29"><div><div class="dd">Fri–Sun May 29–31</div><div class="dt">OFF</div></div><div class="da">Weekend — No practice</div></div>
+<div class="dc training" data-date="2026-06-01"><div><div class="dd">Mon–Thu June 1–4</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Bigs: weight room · Skill: turf · Skill FB + Big Train (same all four days)</div></div>
+<div class="dc off" data-date="2026-06-05"><div><div class="dd">Fri–Sun June 5–7</div><div class="dt">OFF</div></div><div class="da">Weekend — No practice</div></div>
 
-  <div class="phase-header">Phase 3 — 7v7 Competition &amp; Youth Camp (June 8–28)</div>
-  <div class="day-card training" data-date="2026-06-08">
-    <div><div class="day-date">Mon, June 8</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">Bigs: weight room · Skill: turf · Skill FB + Big Train</div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-06-08b">
-    <div><div class="day-date">Mon, June 8</div><div class="day-time">4:40–6:00 PM</div><div class="day-gear">Comp Gear</div></div>
-    <div class="day-activity"><strong class="warn">INVITE ONLY</strong> — 7v7 vs Rocky at Rocky</div>
-  </div>
-  <div class="day-card training" data-date="2026-06-09">
-    <div><div class="day-date">Tue–Thu June 9–11</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">Bigs: weight room · Skill: turf · Skill FB + Big Train</div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-06-12">
-    <div><div class="day-date">Fri, June 12</div><div class="day-time">7:30–8:30 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong class="warn">INVITE ONLY</strong> — Possible ISU Travel Team Practice. All others: OFF</div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-06-13">
-    <div><div class="day-date">Sat, June 13</div><div class="day-time">AM — TBD departure</div><div class="day-gear">Comp Gear</div></div>
-    <div class="day-activity"><strong class="warn">INVITE ONLY</strong> — ISU 7v7 Tourney (travel cost applies). All others: OFF</div>
-  </div>
-  <div class="day-card off" data-date="2026-06-14">
-    <div><div class="day-date">Sun, June 14</div><div class="day-time">OFF</div></div>
-    <div class="day-activity">OFF</div>
-  </div>
-  <div class="day-card training" data-date="2026-06-15">
-    <div><div class="day-date">Mon, June 15</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">Bigs: weight room · Skill: turf · Football work</div>
-  </div>
-  <div class="day-card special" data-date="2026-06-15b">
-    <div><div class="day-date">Mon, June 15</div><div class="day-time">9:00–10:00 AM</div><div class="day-gear">Youth Camp</div></div>
-    <div class="day-activity">Gear check-in &amp; checkout — coaches + parent help needed</div>
-  </div>
-  <div class="day-card special" data-date="2026-06-15c">
-    <div><div class="day-date">Mon, June 15</div><div class="day-time">10:00 AM–1:00 PM</div><div class="day-gear">Youth Camp</div></div>
-    <div class="day-activity"><strong>JV &amp; Varsity expected to coach youth campers.</strong> Select Freshman also.</div>
-  </div>
-  <div class="day-card training" data-date="2026-06-16">
-    <div><div class="day-date">Tue–Thu June 16–18</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">Bigs: weight room · Skill: turf · All levels train</div>
-  </div>
-  <div class="day-card special" data-date="2026-06-16b">
-    <div><div class="day-date">Tue–Thu June 16–18</div><div class="day-time">10:00 AM–1:00 PM</div><div class="day-gear">Youth Camp</div></div>
-    <div class="day-activity"><strong>JV &amp; Varsity expected to coach youth campers</strong> (all three days)</div>
-  </div>
-  <div class="day-card off" data-date="2026-06-19">
-    <div><div class="day-date">Fri–Sun June 19–21</div><div class="day-time">OFF</div></div>
-    <div class="day-activity">Weekend — No practice</div>
-  </div>
-  <div class="day-card training" data-date="2026-06-22">
-    <div><div class="day-date">Mon–Tue June 22–23</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>Varsity &amp; JV: Checkout gear.</strong> Weight room + turf training.</div>
-  </div>
-  <div class="day-card training" data-date="2026-06-24">
-    <div><div class="day-date">Wed–Thu June 24–25</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>Freshman checkout gear.</strong> All levels train.</div>
-  </div>
-  <div class="day-card off" data-date="2026-06-26">
-    <div><div class="day-date">Fri–Sun June 26–28</div><div class="day-time">OFF</div></div>
-    <div class="day-activity">Weekend — No practice</div>
-  </div>
+<div class="ph">Phase 3 — 7v7 Competition &amp; Youth Camp (June 8–28)</div>
+<div class="dc training" data-date="2026-06-08"><div><div class="dd">Mon, June 8</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Bigs: weight room · Skill: turf · Skill FB + Big Train</div></div>
+<div class="dc scrimmage" data-date="2026-06-08b"><div><div class="dd">Mon, June 8</div><div class="dt">4:40–6:00 PM</div><div class="dg">Comp Gear</div></div><div class="da"><strong class="warn">INVITE ONLY</strong> — 7v7 vs Rocky at Rocky</div></div>
+<div class="dc training" data-date="2026-06-09"><div><div class="dd">Tue–Thu June 9–11</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Bigs: weight room · Skill: turf · Skill FB + Big Train</div></div>
+<div class="dc scrimmage" data-date="2026-06-12"><div><div class="dd">Fri, June 12</div><div class="dt">7:30–8:30 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong class="warn">INVITE ONLY</strong> — Possible ISU Travel Team Practice. All others: OFF</div></div>
+<div class="dc scrimmage" data-date="2026-06-13"><div><div class="dd">Sat, June 13</div><div class="dt">AM — TBD departure</div><div class="dg">Comp Gear</div></div><div class="da"><strong class="warn">INVITE ONLY</strong> — ISU 7v7 Tourney (travel cost applies). All others: OFF</div></div>
+<div class="dc off" data-date="2026-06-14"><div><div class="dd">Sun, June 14</div><div class="dt">OFF</div></div><div class="da">OFF</div></div>
+<div class="dc training" data-date="2026-06-15"><div><div class="dd">Mon, June 15</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Bigs: weight room · Skill: turf · Football work</div></div>
+<div class="dc special" data-date="2026-06-15b"><div><div class="dd">Mon, June 15</div><div class="dt">9:00–10:00 AM</div><div class="dg">Youth Camp</div></div><div class="da">Gear check-in &amp; checkout — coaches + parent help needed</div></div>
+<div class="dc special" data-date="2026-06-15c"><div><div class="dd">Mon, June 15</div><div class="dt">10:00 AM–1:00 PM</div><div class="dg">Youth Camp</div></div><div class="da"><strong>JV &amp; Varsity expected to coach youth campers.</strong> Select Freshman also.</div></div>
+<div class="dc training" data-date="2026-06-16"><div><div class="dd">Tue–Thu June 16–18</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Bigs: weight room · Skill: turf · All levels train</div></div>
+<div class="dc special" data-date="2026-06-16b"><div><div class="dd">Tue–Thu June 16–18</div><div class="dt">10:00 AM–1:00 PM</div><div class="dg">Youth Camp</div></div><div class="da"><strong>JV &amp; Varsity expected to coach youth campers</strong> (all three days)</div></div>
+<div class="dc off" data-date="2026-06-19"><div><div class="dd">Fri–Sun June 19–21</div><div class="dt">OFF</div></div><div class="da">Weekend — No practice</div></div>
+<div class="dc training" data-date="2026-06-22"><div><div class="dd">Mon–Tue June 22–23</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>Varsity &amp; JV: Checkout gear.</strong> Weight room + turf training.</div></div>
+<div class="dc training" data-date="2026-06-24"><div><div class="dd">Wed–Thu June 24–25</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>Freshman checkout gear.</strong> All levels train.</div></div>
+<div class="dc off" data-date="2026-06-26"><div><div class="dd">Fri–Sun June 26–28</div><div class="dt">OFF</div></div><div class="da">Weekend — No practice</div></div>
 
-  <div class="phase-header">Phase 4 — Pre-Camp Split Sessions (June 29 – July 5)</div>
-  <div class="day-card training" data-date="2026-06-29">
-    <div><div class="day-date">Mon, June 29</div><div class="day-time">6:55–7:25 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>JV &amp; Varsity on turf:</strong> 10 min Group O&amp;D · 10 min PUP · 10 min Team O vs D</div>
-  </div>
-  <div class="day-card training" data-date="2026-06-29b">
-    <div><div class="day-date">Mon, June 29</div><div class="day-time">7:25–8:10 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>JV &amp; Varsity Skill:</strong> 10 min Indy #1 · 10 min Indy #2 · 10 min Group #1 · 2 min water · 15 min 7v7</div>
-  </div>
-  <div class="day-card training" data-date="2026-06-29c">
-    <div><div class="day-date">Mon, June 29</div><div class="day-time">8:20–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>JV &amp; Varsity Skill: Lift.</strong> All JV &amp; Varsity done at 9:15 AM.</div>
-  </div>
-  <div class="day-card training" data-date="2026-06-30">
-    <div><div class="day-date">Tue–Thu June 30–July 2</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">Skill on turf (speed &amp; agility) starting 7:10 AM · Rotate at 7:50 · Done 9:00 AM</div>
-  </div>
-  <div class="day-card off" data-date="2026-07-03">
-    <div><div class="day-date">Fri–Sun July 3–5</div><div class="day-time">OFF</div></div>
-    <div class="day-activity">4th of July Weekend — No practice</div>
-  </div>
+<div class="ph">Phase 4 — Pre-Camp Split Sessions (June 29 – July 5)</div>
+<div class="dc training" data-date="2026-06-29"><div><div class="dd">Mon, June 29</div><div class="dt">6:55–7:25 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>JV &amp; Varsity on turf:</strong> 10 min Group O&amp;D · 10 min PUP · 10 min Team O vs D</div></div>
+<div class="dc training" data-date="2026-06-29b"><div><div class="dd">Mon, June 29</div><div class="dt">7:25–8:10 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>JV &amp; Varsity Skill:</strong> 10 min Indy #1 · 10 min Indy #2 · 10 min Group #1 · 2 min water · 15 min 7v7</div></div>
+<div class="dc training" data-date="2026-06-29c"><div><div class="dd">Mon, June 29</div><div class="dt">8:20–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>JV &amp; Varsity Skill: Lift.</strong> All JV &amp; Varsity done at 9:15 AM.</div></div>
+<div class="dc training" data-date="2026-06-30"><div><div class="dd">Tue–Thu June 30–July 2</div><div class="dt">6:55–9:00 AM</div><div class="dg">BK Gear</div></div><div class="da">Skill on turf (speed &amp; agility) starting 7:10 AM · Rotate at 7:50 · Done 9:00 AM</div></div>
+<div class="dc off" data-date="2026-07-03"><div><div class="dd">Fri–Sun July 3–5</div><div class="dt">OFF</div></div><div class="da">4th of July Weekend — No practice</div></div>
 
-  <div class="phase-header">⭐ Phase 5 — Black &amp; Blue Camp Week (July 6–16)</div>
-  <div class="day-card contact" data-date="2026-07-06">
-    <div><div class="day-date">Mon, July 6</div><div class="day-time">6:25–8:30 AM</div><div class="day-gear">HELMETS</div></div>
-    <div class="day-activity"><strong class="warn">★ NEW START: 6:25 AM for JV &amp; Varsity (Mon–Wed)</strong><br>JV &amp; Varsity: Practice</div>
-  </div>
-  <div class="day-card training" data-date="2026-07-06b">
-    <div><div class="day-date">Mon, July 6</div><div class="day-time">8:30–9:30 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">JV &amp; Varsity: Weight room</div>
-  </div>
-  <div class="day-card contact" data-date="2026-07-07">
-    <div><div class="day-date">Tue, July 7</div><div class="day-time">6:25–8:30 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">JV &amp; Varsity: Practice</div>
-  </div>
-  <div class="day-card training" data-date="2026-07-07b">
-    <div><div class="day-date">Tue, July 7</div><div class="day-time">8:30–9:30 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">JV &amp; Varsity: Weight room</div>
-  </div>
-  <div class="day-card contact" data-date="2026-07-08">
-    <div><div class="day-date">Wed, July 8</div><div class="day-time">6:25–8:30 AM</div><div class="day-gear">HALF SHELL</div></div>
-    <div class="day-activity">JV &amp; Varsity: Practice</div>
-  </div>
-  <div class="day-card training" data-date="2026-07-08b">
-    <div><div class="day-date">Wed, July 8</div><div class="day-time">8:30–9:30 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">JV &amp; Varsity: Weight room</div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-07-09">
-    <div><div class="day-date">Thu, July 9</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">FULL PADS</div></div>
-    <div class="day-activity"><strong>All Levels vs Timberline @ BK</strong><br><span class="note">Snack 9:00 · JV/Var Weights 9:20–10:10 · JV/Var Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div>
-  </div>
-  <div class="day-card special" data-date="2026-07-09b">
-    <div><div class="day-date">Thu, July 9</div><div class="day-time">5:30–9:30 PM</div><div class="day-gear">Luau attire</div></div>
-    <div class="day-activity"><strong>🌺 KNIGHTS OF THE GRIDIRON LUAU — ALL PARENTS ATTEND.</strong> Seniors + select underclassmen assist.</div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-07-10">
-    <div><div class="day-date">Fri, July 10</div><div class="day-time">6:55–9:40 AM</div><div class="day-gear">FULL PADS</div></div>
-    <div class="day-activity"><strong>All Levels vs Timberline &amp; Meridian @ BK</strong> (3 schools)<br><span class="note">Snack 9:45 · Film 10:00–10:30 · Everyone done 10:45</span></div>
-  </div>
-  <div class="day-card off" data-date="2026-07-11">
-    <div><div class="day-date">Sat–Sun July 11–12</div><div class="day-time">OFF</div></div>
-    <div class="day-activity">Weekend — No practice</div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-07-13">
-    <div><div class="day-date">Mon, July 13</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">FULL PADS</div></div>
-    <div class="day-activity"><strong>All Levels @ Meridian vs Meridian</strong> (Timberline on own)<br><span class="note">Snack 9:00 · JV/Var Weights 9:20–10:10 · JV/Var Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-07-14">
-    <div><div class="day-date">Tue, July 14</div><div class="day-time">6:55–9:40 AM</div><div class="day-gear">FULL PADS</div></div>
-    <div class="day-activity"><strong>All Levels vs Timberline @ BK</strong> (Meridian on own)<br><span class="note">Snack 9:00 · JV/Var Weights 9:20–10:10 · JV/Var Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div>
-  </div>
-  <div class="day-card training" data-date="2026-07-15">
-    <div><div class="day-date">Wed, July 15</div><div class="day-time">6:55–8:00 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>Varsity Lift</strong></div>
-  </div>
-  <div class="day-card contact" data-date="2026-07-15b">
-    <div><div class="day-date">Wed, July 15</div><div class="day-time">8:15–10:30 AM</div><div class="day-gear">FULL PADS</div></div>
-    <div class="day-activity"><strong>Varsity Practice on own</strong> (BK only today) · Lunch 11:00</div>
-  </div>
-  <div class="day-card special" data-date="2026-07-15c">
-    <div><div class="day-date">Wed, July 15</div><div class="day-time">12:00–3:00 PM</div><div class="day-gear">Swimsuits!</div></div>
-    <div class="day-activity"><strong>🏊 All-team activity</strong></div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-07-16">
-    <div><div class="day-date">Thu, July 16</div><div class="day-time">6:55–9:40 AM</div><div class="day-gear">FULL PADS</div></div>
-    <div class="day-activity"><strong>All Levels @ BK vs Timberline &amp; Meridian</strong> (3 schools)<br><span class="note">Snack 9:00 · JV/Var Weights 9:20–10:10 · JV/Var Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div>
-  </div>
-  <div class="day-card special" data-date="2026-07-16b">
-    <div><div class="day-date">Thu, July 16</div><div class="day-time">5:30–8:00 PM</div><div class="day-gear">—</div></div>
-    <div class="day-activity"><strong class="warn">COACHES ONLY</strong> — BBQ &amp; Football Clinic @ Big Daddy's House</div>
-  </div>
-  <div class="day-card off" data-date="2026-07-17">
-    <div><div class="day-date">Fri–Sun July 17–19</div><div class="day-time">OFF</div></div>
-    <div class="day-activity">Weekend — No practice</div>
-  </div>
+<div class="ph">⭐ Phase 5 — Black &amp; Blue Camp Week (July 6–16)</div>
+<div class="dc contact" data-date="2026-07-06"><div><div class="dd">Mon, July 6</div><div class="dt">6:25–8:30 AM</div><div class="dg">HELMETS</div></div><div class="da"><strong class="warn">★ NEW START: 6:25 AM for JV &amp; Varsity (Mon–Wed)</strong><br>JV &amp; Varsity: Practice</div></div>
+<div class="dc training" data-date="2026-07-06b"><div><div class="dd">Mon, July 6</div><div class="dt">8:30–9:30 AM</div><div class="dg">BK Gear</div></div><div class="da">JV &amp; Varsity: Weight room</div></div>
+<div class="dc contact" data-date="2026-07-07"><div><div class="dd">Tue, July 7</div><div class="dt">6:25–8:30 AM</div><div class="dg">BK Gear</div></div><div class="da">JV &amp; Varsity: Practice</div></div>
+<div class="dc training" data-date="2026-07-07b"><div><div class="dd">Tue, July 7</div><div class="dt">8:30–9:30 AM</div><div class="dg">BK Gear</div></div><div class="da">JV &amp; Varsity: Weight room</div></div>
+<div class="dc contact" data-date="2026-07-08"><div><div class="dd">Wed, July 8</div><div class="dt">6:25–8:30 AM</div><div class="dg">HALF SHELL</div></div><div class="da">JV &amp; Varsity: Practice</div></div>
+<div class="dc training" data-date="2026-07-08b"><div><div class="dd">Wed, July 8</div><div class="dt">8:30–9:30 AM</div><div class="dg">BK Gear</div></div><div class="da">JV &amp; Varsity: Weight room</div></div>
+<div class="dc scrimmage" data-date="2026-07-09"><div><div class="dd">Thu, July 9</div><div class="dt">6:55–9:00 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels vs Timberline @ BK</strong><br><span class="note">Snack 9:00 · JV/Var Weights 9:20–10:10 · JV/Var Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc special" data-date="2026-07-09b"><div><div class="dd">Thu, July 9</div><div class="dt">5:30–9:30 PM</div><div class="dg">Luau attire</div></div><div class="da"><strong>🌺 KNIGHTS OF THE GRIDIRON LUAU — ALL PARENTS ATTEND.</strong> Seniors + select underclassmen assist.</div></div>
+<div class="dc scrimmage" data-date="2026-07-10"><div><div class="dd">Fri, July 10</div><div class="dt">6:55–9:40 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels vs Timberline &amp; Meridian @ BK</strong> (3 schools)<br><span class="note">Snack 9:45 · Film 10:00–10:30 · Everyone done 10:45</span></div></div>
+<div class="dc off" data-date="2026-07-11"><div><div class="dd">Sat–Sun July 11–12</div><div class="dt">OFF</div></div><div class="da">Weekend — No practice</div></div>
+<div class="dc scrimmage" data-date="2026-07-13"><div><div class="dd">Mon, July 13</div><div class="dt">6:55–9:00 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels @ Meridian vs Meridian</strong> (Timberline on own)<br><span class="note">Snack 9:00 · JV/Var Weights 9:20–10:10 · JV/Var Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc scrimmage" data-date="2026-07-14"><div><div class="dd">Tue, July 14</div><div class="dt">6:55–9:40 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels vs Timberline @ BK</strong> (Meridian on own)<br><span class="note">Snack 9:00 · JV/Var Weights 9:20–10:10 · JV/Var Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc training" data-date="2026-07-15"><div><div class="dd">Wed, July 15</div><div class="dt">6:55–8:00 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>Varsity Lift</strong></div></div>
+<div class="dc contact" data-date="2026-07-15b"><div><div class="dd">Wed, July 15</div><div class="dt">8:15–10:30 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>Varsity Practice on own</strong> (BK only — Timberline @ Meridian today) · Lunch 11:00</div></div>
+<div class="dc special" data-date="2026-07-15c"><div><div class="dd">Wed, July 15</div><div class="dt">12:00–3:00 PM</div><div class="dg">Swimsuits!</div></div><div class="da"><strong>🏊 All-team activity</strong></div></div>
+<div class="dc scrimmage" data-date="2026-07-16"><div><div class="dd">Thu, July 16</div><div class="dt">6:55–9:40 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels @ BK vs Timberline &amp; Meridian</strong> (3 schools)<br><span class="note">Snack 9:00 · JV/Var Weights 9:20–10:10 · JV/Var Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc special" data-date="2026-07-16b"><div><div class="dd">Thu, July 16</div><div class="dt">5:30–8:00 PM</div></div><div class="da"><strong class="warn">COACHES ONLY</strong> — BBQ &amp; Football Clinic @ Big Daddy's House</div></div>
+<div class="dc off" data-date="2026-07-17"><div><div class="dd">Fri–Sun July 17–19</div><div class="dt">OFF</div></div><div class="da">Weekend — No practice</div></div>
 
-  <div class="phase-header">Phase 6 — Late Summer &amp; Night of Knights (July 20 – Aug 9)</div>
-  <div class="day-card training" data-date="2026-07-20">
-    <div><div class="day-date">Mon–Thu July 20–23</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">Bigs: weight room · Skill: turf · All levels train (same all four days)</div>
-  </div>
-  <div class="day-card off" data-date="2026-07-24">
-    <div><div class="day-date">Fri–Sun July 24–26</div><div class="day-time">OFF</div></div>
-    <div class="day-activity">Weekend — No practice</div>
-  </div>
-  <div class="day-card training" data-date="2026-07-27">
-    <div><div class="day-date">Mon, July 27</div><div class="day-time">6:55–8:35 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">JV &amp; Varsity on field — Bigs weight room, Skill turf, football work</div>
-  </div>
-  <div class="day-card special" data-date="2026-07-27b">
-    <div><div class="day-date">Mon, July 27</div><div class="day-time">TBD Evening</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>🗡 JV &amp; Varsity: Night of Knights</strong> — off-site (details TBD)</div>
-  </div>
-  <div class="day-card training" data-date="2026-07-28">
-    <div><div class="day-date">Tue, July 28</div><div class="day-time">6:55–8:35 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">JV &amp; Varsity on field — all train</div>
-  </div>
-  <div class="day-card special" data-date="2026-07-28b">
-    <div><div class="day-date">Tue, July 28</div><div class="day-time">TBD Evening</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>🗡 JV &amp; Varsity: Night of Knights</strong> — off-site (details TBD)</div>
-  </div>
-  <div class="day-card training" data-date="2026-07-29">
-    <div><div class="day-date">Wed, July 29</div><div class="day-time">6:55–8:35 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity">JV &amp; Varsity on field — football work</div>
-  </div>
-  <div class="day-card special" data-date="2026-07-29b">
-    <div><div class="day-date">Wed, July 29</div><div class="day-time">TBD Evening</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>🗡 Night of Knights</strong> — off-site (details TBD)</div>
-  </div>
-  <div class="day-card training" data-date="2026-07-30">
-    <div><div class="day-date">Thu, July 30</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">BK Gear</div></div>
-    <div class="day-activity"><strong>🏁 LAST DAY OF SUMMER WORKOUTS.</strong> Team Activity @ Camel's Back Park.</div>
-  </div>
-  <div class="day-card off" data-date="2026-07-31">
-    <div><div class="day-date">Fri July 31–Sun Aug 9</div><div class="day-time">DEAD WEEK — OFF</div></div>
-    <div class="day-activity">No practice. Rest before Fall Camp.</div>
-  </div>
+<div class="ph">Phase 6 — Late Summer &amp; Night of Knights (July 20 – Aug 9)</div>
+<div class="dc training" data-date="2026-07-20"><div><div class="dd">Mon–Thu July 20–23</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Bigs: weight room · Skill: turf · All levels train (same all four days)</div></div>
+<div class="dc off" data-date="2026-07-24"><div><div class="dd">Fri–Sun July 24–26</div><div class="dt">OFF</div></div><div class="da">Weekend — No practice</div></div>
+<div class="dc training" data-date="2026-07-27"><div><div class="dd">Mon, July 27</div><div class="dt">6:55–8:35 AM</div><div class="dg">BK Gear</div></div><div class="da">JV &amp; Varsity on field — Bigs weight room, Skill turf, football work</div></div>
+<div class="dc special" data-date="2026-07-27b"><div><div class="dd">Mon, July 27</div><div class="dt">TBD Evening</div></div><div class="da"><strong>🗡 JV &amp; Varsity: Night of Knights</strong> — off-site (details TBD)</div></div>
+<div class="dc training" data-date="2026-07-28"><div><div class="dd">Tue, July 28</div><div class="dt">6:55–8:35 AM</div><div class="dg">BK Gear</div></div><div class="da">JV &amp; Varsity on field — all train</div></div>
+<div class="dc special" data-date="2026-07-28b"><div><div class="dd">Tue, July 28</div><div class="dt">TBD Evening</div></div><div class="da"><strong>🗡 JV &amp; Varsity: Night of Knights</strong> — off-site (details TBD)</div></div>
+<div class="dc training" data-date="2026-07-29"><div><div class="dd">Wed, July 29</div><div class="dt">6:55–8:35 AM</div><div class="dg">BK Gear</div></div><div class="da">JV &amp; Varsity on field — football work</div></div>
+<div class="dc special" data-date="2026-07-29b"><div><div class="dd">Wed, July 29</div><div class="dt">TBD Evening</div></div><div class="da"><strong>🗡 Night of Knights</strong> — off-site (details TBD)</div></div>
+<div class="dc training" data-date="2026-07-30"><div><div class="dd">Thu, July 30</div><div class="dt">6:55–9:00 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>🏁 LAST DAY OF SUMMER WORKOUTS.</strong> Team Activity @ Camel's Back Park.</div></div>
+<div class="dc off" data-date="2026-07-31"><div><div class="dd">Fri July 31–Sun Aug 9</div><div class="dt">DEAD WEEK — OFF</div></div><div class="da">No practice. Rest before Fall Camp.</div></div>
 
-  <div class="phase-header">Fall Ramp-Up — August</div>
-  <div class="day-card training" data-date="2026-08-10">
-    <div><div class="day-date">Mon, Aug 10</div><div class="day-time">6:50 AM · Mon–Sat</div><div class="day-gear">TBD</div></div>
-    <div class="day-activity"><strong>🏈 FALL CAMP BEGINS.</strong> Full schedule to be sent separately.</div>
-  </div>
-  <div class="day-card" data-date="2026-08-13">
-    <div><div class="day-date">Wed, Aug 13</div></div>
-    <div class="day-activity">Sophomore–Senior Orientation</div>
-  </div>
-  <div class="day-card special" data-date="2026-08-14">
-    <div><div class="day-date">Fri, Aug 14</div></div>
-    <div class="day-activity"><strong>🏫 FIRST DAY OF SCHOOL</strong></div>
-  </div>
-  <div class="day-card" data-date="2026-08-15">
-    <div><div class="day-date">Sat, Aug 15</div><div class="day-time">AM</div></div>
-    <div class="day-activity">Dudes Clinic @ BK</div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-08-20">
-    <div><div class="day-date">Thu, Aug 20</div></div>
-    <div class="day-activity"><strong>Black &amp; Gold Scrimmage</strong> — JV + select Varsity vs Freshman</div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-08-21">
-    <div><div class="day-date">Fri, Aug 21</div><div class="day-time">4:30–6:30 PM</div></div>
-    <div class="day-activity"><strong>Varsity-Only Jamboree @ Rocky</strong> — vs Borah, Rocky &amp; Eagle</div>
-  </div>
-  <div class="day-card special" data-date="2026-08-22">
-    <div><div class="day-date">Sat, Aug 22</div><div class="day-time">AM</div></div>
-    <div class="day-activity"><strong>🥂 Misses &amp; Mimosas</strong> @ BK — parent event</div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-08-27">
-    <div><div class="day-date">Thu, Aug 27</div></div>
-    <div class="day-activity"><strong>Varsity: Host Aquinas</strong> — details TBD</div>
-  </div>
-  <div class="day-card scrimmage" data-date="2026-08-28">
-    <div><div class="day-date">Fri, Aug 28 🏈</div></div>
-    <div class="day-activity"><strong>⭐ SEASON OPENER — Varsity vs Aquinas @ BK</strong></div>
-  </div>
-
+<div class="ph">Fall Ramp-Up — August</div>
+<div class="dc training" data-date="2026-08-10"><div><div class="dd">Mon, Aug 10</div><div class="dt">6:50 AM · Mon–Sat</div></div><div class="da"><strong>🏈 FALL CAMP BEGINS.</strong> Full schedule sent separately.</div></div>
+<div class="dc" data-date="2026-08-13"><div><div class="dd">Wed, Aug 13</div></div><div class="da">Sophomore–Senior Orientation</div></div>
+<div class="dc special" data-date="2026-08-14"><div><div class="dd">Fri, Aug 14</div></div><div class="da"><strong>🏫 FIRST DAY OF SCHOOL</strong></div></div>
+<div class="dc" data-date="2026-08-15"><div><div class="dd">Sat, Aug 15</div><div class="dt">AM</div></div><div class="da">Dudes Clinic @ BK</div></div>
+<div class="dc scrimmage" data-date="2026-08-20"><div><div class="dd">Thu, Aug 20</div></div><div class="da"><strong>Black &amp; Gold Scrimmage</strong> — JV + select Varsity vs Freshman</div></div>
+<div class="dc scrimmage" data-date="2026-08-21"><div><div class="dd">Fri, Aug 21</div><div class="dt">4:30–6:30 PM</div></div><div class="da"><strong>Varsity-Only Jamboree @ Rocky</strong> — vs Borah, Rocky &amp; Eagle</div></div>
+<div class="dc special" data-date="2026-08-22"><div><div class="dd">Sat, Aug 22</div><div class="dt">AM</div></div><div class="da"><strong>🥂 Misses &amp; Mimosas</strong> @ BK — parent event</div></div>
+<div class="dc scrimmage" data-date="2026-08-27"><div><div class="dd">Thu, Aug 27</div></div><div class="da"><strong>Varsity: Host Aquinas</strong> — details TBD</div></div>
+<div class="dc scrimmage" data-date="2026-08-28"><div><div class="dd">Fri, Aug 28 🏈</div></div><div class="da"><strong>⭐ SEASON OPENER — Varsity vs Aquinas @ BK</strong></div></div>
 </div><!-- /varsity -->
 
-<!-- ══════════════════════════════════════════════════════════ -->
-<!--  JV PANEL                                                  -->
-<!-- ══════════════════════════════════════════════════════════ -->
-<div class="level-panel" id="panel-jv">
-  <div class="phase-header">Phase 1 — Last Days of School (May 18–22)</div>
-  <div class="day-card training" data-date="2026-05-18"><div><div class="day-date">Mon–Thu May 18–21</div><div class="day-time">11:55 AM–1:45 PM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Lunch on own 11:55–12:35 · Team meeting 12:35–12:45 · <strong>Weight room / Combine 12:45–1:45</strong></div></div>
-  <div class="day-card" data-date="2026-05-22"><div><div class="day-date">Fri, May 22</div><div class="day-time">6:00 PM</div><div class="day-gear">School clothes</div></div><div class="day-activity"><strong>Graduation Ceremony</strong></div></div>
-  <div class="day-card off"><div><div class="day-date">Sat–Mon May 23–25</div><div class="day-time">OFF</div></div><div class="day-activity">Memorial Day Weekend</div></div>
-
-  <div class="phase-header">Phase 2 — Early Summer (May 26 – June 7)</div>
-  <div class="day-card training" data-date="2026-05-26"><div><div class="day-date">Tue, May 26</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>☀ FIRST DAY OF SUMMER.</strong> Bigs: weight room · Skill: turf · All train together</div></div>
-  <div class="day-card training"><div><div class="day-date">Wed–Thu May 27–28 &amp; Mon–Thu June 1–4</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Bigs: weight room · Skill: turf · Skill FB + Big Train (weekends OFF)</div></div>
-
-  <div class="phase-header">Phase 3 — Competition &amp; Youth Camp (June 8–28)</div>
-  <div class="day-card training"><div><div class="day-date">Mon, June 8</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Morning training. Evening 7v7 at Rocky is Varsity invite-only — JV evening OFF.</div></div>
-  <div class="day-card training"><div><div class="day-date">Tue–Thu June 9–11</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Bigs: weight room · Skill: turf</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri June 12 &amp; Sat June 13</div><div class="day-time">OFF</div></div><div class="day-activity">ISU events are Varsity invite-only. JV: OFF both days.</div></div>
-  <div class="day-card training"><div><div class="day-date">Mon, June 15</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Weight room + turf + football work</div></div>
-  <div class="day-card special"><div><div class="day-date">Mon, June 15</div><div class="day-time">9:00 AM–1:00 PM</div><div class="day-gear">Youth Camp</div></div><div class="day-activity">Gear check-in 9–10 AM. <strong>JV expected to coach youth campers 10 AM–1 PM.</strong></div></div>
-  <div class="day-card training"><div><div class="day-date">Tue–Thu June 16–18</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Weight room + turf training</div></div>
-  <div class="day-card special"><div><div class="day-date">Tue–Thu June 16–18</div><div class="day-time">10:00 AM–1:00 PM</div><div class="day-gear">Youth Camp</div></div><div class="day-activity"><strong>JV expected to coach youth campers</strong> (all three days)</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri–Sun June 19–21</div><div class="day-time">OFF</div></div><div class="day-activity">Weekend</div></div>
-  <div class="day-card training"><div><div class="day-date">Mon–Tue June 22–23</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>JV checkout gear.</strong> Weight room + turf training.</div></div>
-  <div class="day-card training"><div><div class="day-date">Wed–Thu June 24–25</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Continued training (Freshman checkout gear these days)</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri–Sun June 26–28</div><div class="day-time">OFF</div></div><div class="day-activity">Weekend</div></div>
-
-  <div class="phase-header">Phase 4 — Pre-Camp Split Sessions (June 29 – July 5)</div>
-  <div class="day-card training"><div><div class="day-date">Mon, June 29</div><div class="day-time">6:55–7:25 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>JV on turf:</strong> 10 min Group O&amp;D · 10 min PUP · 10 min Team O vs D</div></div>
-  <div class="day-card training"><div><div class="day-date">Mon, June 29</div><div class="day-time">7:25–8:10 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>JV Skill:</strong> 10 min Indy #1 · 10 min Indy #2 · 10 min Group #1 · 2 min water · 15 min 7v7</div></div>
-  <div class="day-card training"><div><div class="day-date">Mon, June 29</div><div class="day-time">8:20–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>JV Skill: Lift.</strong> All JV done at 9:15 AM.</div></div>
-  <div class="day-card training"><div><div class="day-date">Tue–Thu June 30–July 2</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Skill on turf (speed &amp; agility) starting 7:10 AM · Rotate at 7:50 · Done 9:00 AM</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri–Sun July 3–5</div><div class="day-time">OFF</div></div><div class="day-activity">4th of July Weekend</div></div>
-
-  <div class="phase-header">⭐ Phase 5 — Black &amp; Blue Camp Week (July 6–16)</div>
-  <div class="day-card contact" data-date="2026-07-06"><div><div class="day-date">Mon, July 6</div><div class="day-time">6:25–8:30 AM</div><div class="day-gear">HELMETS</div></div><div class="day-activity"><strong class="warn">★ NEW START: 6:25 AM (Mon–Wed)</strong><br>JV: Practice</div></div>
-  <div class="day-card training"><div><div class="day-date">Mon, July 6</div><div class="day-time">8:30–9:30 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">JV: Weight room</div></div>
-  <div class="day-card contact" data-date="2026-07-07"><div><div class="day-date">Tue, July 7</div><div class="day-time">6:25–8:30 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">JV: Practice</div></div>
-  <div class="day-card training"><div><div class="day-date">Tue, July 7</div><div class="day-time">8:30–9:30 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">JV: Weight room</div></div>
-  <div class="day-card contact" data-date="2026-07-08"><div><div class="day-date">Wed, July 8</div><div class="day-time">6:25–8:30 AM</div><div class="day-gear">HALF SHELL</div></div><div class="day-activity">JV: Practice</div></div>
-  <div class="day-card training"><div><div class="day-date">Wed, July 8</div><div class="day-time">8:30–9:30 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">JV: Weight room</div></div>
-  <div class="day-card scrimmage" data-date="2026-07-09"><div><div class="day-date">Thu, July 9</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>All Levels vs Timberline @ BK</strong><br><span class="note">JV: Weights 9:20–10:10 · Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
-  <div class="day-card special" data-date="2026-07-09b"><div><div class="day-date">Thu, July 9</div><div class="day-time">5:30–9:30 PM</div><div class="day-gear">Luau attire</div></div><div class="day-activity"><strong>🌺 KNIGHTS OF THE GRIDIRON LUAU — ALL PARENTS ATTEND.</strong></div></div>
-  <div class="day-card scrimmage" data-date="2026-07-10"><div><div class="day-date">Fri, July 10</div><div class="day-time">6:55–9:40 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>All Levels vs Timberline &amp; Meridian @ BK</strong><br><span class="note">Snack 9:45 · Film 10:00–10:30 · Done 10:45</span></div></div>
-  <div class="day-card off"><div><div class="day-date">Sat–Sun July 11–12</div><div class="day-time">OFF</div></div><div class="day-activity">Weekend</div></div>
-  <div class="day-card scrimmage" data-date="2026-07-13"><div><div class="day-date">Mon, July 13</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>All Levels @ Meridian vs Meridian</strong><br><span class="note">JV: Weights 9:20–10:10 · Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
-  <div class="day-card scrimmage" data-date="2026-07-14"><div><div class="day-date">Tue, July 14</div><div class="day-time">6:55–9:40 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>All Levels vs Timberline @ BK</strong><br><span class="note">JV: Weights 9:20–10:10 · Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
-  <div class="day-card training"><div><div class="day-date">Wed, July 15</div><div class="day-time">10:15–11:00 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>JV: Lift.</strong> Lunch 11:00. <span class="note">(No JV morning practice today — Varsity on own)</span></div></div>
-  <div class="day-card special"><div><div class="day-date">Wed, July 15</div><div class="day-time">12:00–3:00 PM</div><div class="day-gear">Swimsuits!</div></div><div class="day-activity"><strong>🏊 All-team activity</strong></div></div>
-  <div class="day-card scrimmage" data-date="2026-07-16"><div><div class="day-date">Thu, July 16</div><div class="day-time">6:55–9:40 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>All Levels @ BK vs Timberline &amp; Meridian</strong><br><span class="note">JV: Weights 9:20–10:10 · Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
-  <div class="day-card off"><div><div class="day-date">Fri–Sun July 17–19</div><div class="day-time">OFF</div></div><div class="day-activity">Weekend</div></div>
-
-  <div class="phase-header">Phase 6 — Late Summer &amp; Night of Knights (July 20 – Aug 9)</div>
-  <div class="day-card training" data-date="2026-07-20"><div><div class="day-date">Mon–Thu July 20–23</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">All levels train together (same four days)</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri–Sun July 24–26</div><div class="day-time">OFF</div></div><div class="day-activity">Weekend</div></div>
-  <div class="day-card training" data-date="2026-07-27"><div><div class="day-date">Mon, July 27</div><div class="day-time">6:55–8:35 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">JV on field — football work</div></div>
-  <div class="day-card special"><div><div class="day-date">Mon, July 27</div><div class="day-time">TBD Evening</div></div><div class="day-activity"><strong>🗡 JV Night of Knights</strong> — off-site (details TBD)</div></div>
-  <div class="day-card training" data-date="2026-07-28"><div><div class="day-date">Tue, July 28</div><div class="day-time">6:55–8:35 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">JV on field — all train</div></div>
-  <div class="day-card special"><div><div class="day-date">Tue, July 28</div><div class="day-time">TBD Evening</div></div><div class="day-activity"><strong>🗡 JV Night of Knights</strong> — off-site (details TBD)</div></div>
-  <div class="day-card training" data-date="2026-07-29"><div><div class="day-date">Wed, July 29</div><div class="day-time">6:55–8:35 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">JV on field — football work</div></div>
-  <div class="day-card special"><div><div class="day-date">Wed, July 29</div><div class="day-time">TBD Evening</div></div><div class="day-activity"><strong>🗡 Night of Knights</strong> — off-site (details TBD)</div></div>
-  <div class="day-card training" data-date="2026-07-30"><div><div class="day-date">Thu, July 30</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>🏁 LAST DAY OF SUMMER WORKOUTS.</strong> Team Activity @ Camel's Back Park.</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri July 31–Sun Aug 9</div><div class="day-time">DEAD WEEK — OFF</div></div><div class="day-activity">No practice. Rest before Fall Camp.</div></div>
-
-  <div class="phase-header">Fall Ramp-Up — August</div>
-  <div class="day-card training" data-date="2026-08-10"><div><div class="day-date">Mon, Aug 10</div><div class="day-time">6:50 AM start</div></div><div class="day-activity"><strong>🏈 FALL CAMP BEGINS.</strong> Full schedule to follow.</div></div>
-  <div class="day-card special" data-date="2026-08-14"><div><div class="day-date">Fri, Aug 14</div></div><div class="day-activity"><strong>🏫 FIRST DAY OF SCHOOL</strong></div></div>
-  <div class="day-card scrimmage" data-date="2026-08-20"><div><div class="day-date">Thu, Aug 20</div></div><div class="day-activity"><strong>Black &amp; Gold Scrimmage</strong> — JV + select Varsity vs Freshman</div></div>
-  <div class="day-card special" data-date="2026-08-22"><div><div class="day-date">Sat, Aug 22</div><div class="day-time">AM</div></div><div class="day-activity"><strong>🥂 Misses &amp; Mimosas</strong> @ BK</div></div>
-  <div class="day-card scrimmage" data-date="2026-08-27"><div><div class="day-date">Thu, Aug 27</div></div><div class="day-activity"><strong>JV game — TBD</strong></div></div>
+<!-- ═══════════════════════════════════════
+     JV
+═══════════════════════════════════════ -->
+<div class="panel" id="pj">
+<div class="ph">Phase 1 — Last Days of School (May 18–22)</div>
+<div class="dc training" data-date="2026-05-18"><div><div class="dd">Mon–Thu May 18–21</div><div class="dt">11:55 AM–1:45 PM</div><div class="dg">BK Gear</div></div><div class="da">Lunch on own 11:55–12:35 · Team meeting 12:35–12:45 · <strong>Weight room/Combine 12:45–1:45</strong></div></div>
+<div class="dc" data-date="2026-05-22"><div><div class="dd">Fri, May 22</div><div class="dt">6:00 PM</div><div class="dg">School clothes</div></div><div class="da"><strong>Graduation Ceremony</strong></div></div>
+<div class="dc off"><div><div class="dd">Sat–Mon May 23–25</div><div class="dt">OFF</div></div><div class="da">Memorial Day Weekend</div></div>
+<div class="ph">Phase 2 — Early Summer (May 26 – June 7)</div>
+<div class="dc training" data-date="2026-05-26"><div><div class="dd">Tue, May 26</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>☀ FIRST DAY OF SUMMER.</strong> Bigs: weight room · Skill: turf · All train together</div></div>
+<div class="dc training"><div><div class="dd">Wed–Thu May 27–28 &amp; Mon–Thu June 1–4</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Bigs: weight room · Skill: turf · Skill FB + Big Train (weekends OFF)</div></div>
+<div class="ph">Phase 3 — Competition &amp; Youth Camp (June 8–28)</div>
+<div class="dc training"><div><div class="dd">Mon, June 8</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Morning training. Evening 7v7 at Rocky is Varsity invite-only — JV evening OFF.</div></div>
+<div class="dc training"><div><div class="dd">Tue–Thu June 9–11</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Bigs: weight room · Skill: turf</div></div>
+<div class="dc off"><div><div class="dd">Fri June 12 &amp; Sat June 13</div><div class="dt">OFF</div></div><div class="da">ISU events are Varsity invite-only. JV: OFF both days.</div></div>
+<div class="dc training"><div><div class="dd">Mon, June 15</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Weight room + turf + football work</div></div>
+<div class="dc special"><div><div class="dd">Mon, June 15</div><div class="dt">9:00 AM–1:00 PM</div><div class="dg">Youth Camp</div></div><div class="da">Gear check-in 9–10 AM. <strong>JV expected to coach youth campers 10 AM–1 PM.</strong></div></div>
+<div class="dc training"><div><div class="dd">Tue–Thu June 16–18</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Weight room + turf training</div></div>
+<div class="dc special"><div><div class="dd">Tue–Thu June 16–18</div><div class="dt">10:00 AM–1:00 PM</div><div class="dg">Youth Camp</div></div><div class="da"><strong>JV expected to coach youth campers</strong> (all three days)</div></div>
+<div class="dc off"><div><div class="dd">Fri–Sun June 19–21</div><div class="dt">OFF</div></div><div class="da">Weekend</div></div>
+<div class="dc training"><div><div class="dd">Mon–Tue June 22–23</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>JV checkout gear.</strong> Weight room + turf training.</div></div>
+<div class="dc training"><div><div class="dd">Wed–Thu June 24–25</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Continued training (Freshman checkout gear these days)</div></div>
+<div class="dc off"><div><div class="dd">Fri–Sun June 26–28</div><div class="dt">OFF</div></div><div class="da">Weekend</div></div>
+<div class="ph">Phase 4 — Pre-Camp Split Sessions (June 29 – July 5)</div>
+<div class="dc training"><div><div class="dd">Mon, June 29</div><div class="dt">6:55–7:25 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>JV on turf:</strong> 10 min Group O&amp;D · 10 min PUP · 10 min Team O vs D</div></div>
+<div class="dc training"><div><div class="dd">Mon, June 29</div><div class="dt">7:25–8:10 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>JV Skill:</strong> 10 min Indy #1 · 10 min Indy #2 · 10 min Group #1 · 2 min water · 15 min 7v7</div></div>
+<div class="dc training"><div><div class="dd">Mon, June 29</div><div class="dt">8:20–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>JV Skill: Lift.</strong> All JV done at 9:15 AM.</div></div>
+<div class="dc training"><div><div class="dd">Tue–Thu June 30–July 2</div><div class="dt">6:55–9:00 AM</div><div class="dg">BK Gear</div></div><div class="da">Skill on turf (speed &amp; agility) starting 7:10 AM · Rotate at 7:50 · Done 9:00 AM</div></div>
+<div class="dc off"><div><div class="dd">Fri–Sun July 3–5</div><div class="dt">OFF</div></div><div class="da">4th of July Weekend</div></div>
+<div class="ph">⭐ Phase 5 — Black &amp; Blue Camp Week (July 6–16)</div>
+<div class="dc contact" data-date="2026-07-06"><div><div class="dd">Mon, July 6</div><div class="dt">6:25–8:30 AM</div><div class="dg">HELMETS</div></div><div class="da"><strong class="warn">★ NEW START: 6:25 AM (Mon–Wed)</strong><br>JV: Practice</div></div>
+<div class="dc training"><div><div class="dd">Mon, July 6</div><div class="dt">8:30–9:30 AM</div><div class="dg">BK Gear</div></div><div class="da">JV: Weight room</div></div>
+<div class="dc contact" data-date="2026-07-07"><div><div class="dd">Tue, July 7</div><div class="dt">6:25–8:30 AM</div><div class="dg">BK Gear</div></div><div class="da">JV: Practice</div></div>
+<div class="dc training"><div><div class="dd">Tue, July 7</div><div class="dt">8:30–9:30 AM</div><div class="dg">BK Gear</div></div><div class="da">JV: Weight room</div></div>
+<div class="dc contact" data-date="2026-07-08"><div><div class="dd">Wed, July 8</div><div class="dt">6:25–8:30 AM</div><div class="dg">HALF SHELL</div></div><div class="da">JV: Practice</div></div>
+<div class="dc training"><div><div class="dd">Wed, July 8</div><div class="dt">8:30–9:30 AM</div><div class="dg">BK Gear</div></div><div class="da">JV: Weight room</div></div>
+<div class="dc scrimmage" data-date="2026-07-09"><div><div class="dd">Thu, July 9</div><div class="dt">6:55–9:00 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels vs Timberline @ BK</strong><br><span class="note">JV: Weights 9:20–10:10 · Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc special" data-date="2026-07-09b"><div><div class="dd">Thu, July 9</div><div class="dt">5:30–9:30 PM</div><div class="dg">Luau attire</div></div><div class="da"><strong>🌺 KNIGHTS OF THE GRIDIRON LUAU — ALL PARENTS ATTEND.</strong></div></div>
+<div class="dc scrimmage" data-date="2026-07-10"><div><div class="dd">Fri, July 10</div><div class="dt">6:55–9:40 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels vs Timberline &amp; Meridian @ BK</strong><br><span class="note">Snack 9:45 · Film 10:00–10:30 · Done 10:45</span></div></div>
+<div class="dc off"><div><div class="dd">Sat–Sun July 11–12</div><div class="dt">OFF</div></div><div class="da">Weekend</div></div>
+<div class="dc scrimmage" data-date="2026-07-13"><div><div class="dd">Mon, July 13</div><div class="dt">6:55–9:00 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels @ Meridian vs Meridian</strong><br><span class="note">JV: Weights 9:20–10:10 · Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc scrimmage" data-date="2026-07-14"><div><div class="dd">Tue, July 14</div><div class="dt">6:55–9:40 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels vs Timberline @ BK</strong><br><span class="note">JV: Weights 9:20–10:10 · Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc training"><div><div class="dd">Wed, July 15</div><div class="dt">10:15–11:00 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>JV: Lift.</strong> Lunch 11:00. <span class="note">(No JV morning practice today — Varsity practices on own)</span></div></div>
+<div class="dc special"><div><div class="dd">Wed, July 15</div><div class="dt">12:00–3:00 PM</div><div class="dg">Swimsuits!</div></div><div class="da"><strong>🏊 All-team activity</strong></div></div>
+<div class="dc scrimmage" data-date="2026-07-16"><div><div class="dd">Thu, July 16</div><div class="dt">6:55–9:40 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels @ BK vs Timberline &amp; Meridian</strong><br><span class="note">JV: Weights 9:20–10:10 · Film 10:15–10:45 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc off"><div><div class="dd">Fri–Sun July 17–19</div><div class="dt">OFF</div></div><div class="da">Weekend</div></div>
+<div class="ph">Phase 6 — Late Summer &amp; Night of Knights (July 20 – Aug 9)</div>
+<div class="dc training" data-date="2026-07-20"><div><div class="dd">Mon–Thu July 20–23</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">All levels train together (same four days)</div></div>
+<div class="dc off"><div><div class="dd">Fri–Sun July 24–26</div><div class="dt">OFF</div></div><div class="da">Weekend</div></div>
+<div class="dc training" data-date="2026-07-27"><div><div class="dd">Mon, July 27</div><div class="dt">6:55–8:35 AM</div><div class="dg">BK Gear</div></div><div class="da">JV on field — football work</div></div>
+<div class="dc special"><div><div class="dd">Mon, July 27</div><div class="dt">TBD Evening</div></div><div class="da"><strong>🗡 JV Night of Knights</strong> — off-site (details TBD)</div></div>
+<div class="dc training" data-date="2026-07-28"><div><div class="dd">Tue, July 28</div><div class="dt">6:55–8:35 AM</div><div class="dg">BK Gear</div></div><div class="da">JV on field — all train</div></div>
+<div class="dc special"><div><div class="dd">Tue, July 28</div><div class="dt">TBD Evening</div></div><div class="da"><strong>🗡 JV Night of Knights</strong> — off-site (details TBD)</div></div>
+<div class="dc training" data-date="2026-07-29"><div><div class="dd">Wed, July 29</div><div class="dt">6:55–8:35 AM</div><div class="dg">BK Gear</div></div><div class="da">JV on field — football work</div></div>
+<div class="dc special"><div><div class="dd">Wed, July 29</div><div class="dt">TBD Evening</div></div><div class="da"><strong>🗡 Night of Knights</strong> — off-site (details TBD)</div></div>
+<div class="dc training" data-date="2026-07-30"><div><div class="dd">Thu, July 30</div><div class="dt">6:55–9:00 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>🏁 LAST DAY OF SUMMER WORKOUTS.</strong> Team Activity @ Camel's Back Park.</div></div>
+<div class="dc off"><div><div class="dd">Fri July 31–Sun Aug 9</div><div class="dt">DEAD WEEK — OFF</div></div><div class="da">No practice. Rest before Fall Camp.</div></div>
+<div class="ph">Fall Ramp-Up — August</div>
+<div class="dc training" data-date="2026-08-10"><div><div class="dd">Mon, Aug 10</div><div class="dt">6:50 AM start</div></div><div class="da"><strong>🏈 FALL CAMP BEGINS.</strong> Full schedule to follow.</div></div>
+<div class="dc special" data-date="2026-08-14"><div><div class="dd">Fri, Aug 14</div></div><div class="da"><strong>🏫 FIRST DAY OF SCHOOL</strong></div></div>
+<div class="dc scrimmage" data-date="2026-08-20"><div><div class="dd">Thu, Aug 20</div></div><div class="da"><strong>Black &amp; Gold Scrimmage</strong> — JV + select Varsity vs Freshman</div></div>
+<div class="dc special" data-date="2026-08-22"><div><div class="dd">Sat, Aug 22</div><div class="dt">AM</div></div><div class="da"><strong>🥂 Misses &amp; Mimosas</strong> @ BK</div></div>
+<div class="dc scrimmage" data-date="2026-08-27"><div><div class="dd">Thu, Aug 27</div></div><div class="da"><strong>JV game — TBD</strong></div></div>
 </div><!-- /jv -->
 
-<!-- ══════════════════════════════════════════════════════════ -->
-<!--  FRESHMAN PANEL                                            -->
-<!-- ══════════════════════════════════════════════════════════ -->
-<div class="level-panel" id="panel-frosh">
-  <div class="phase-header">IMPORTANT NOTE FOR FRESHMAN FAMILIES</div>
-  <div class="day-card special"><div><div class="day-date" style="color:#aa3333">⚠ READ THIS</div></div><div class="day-activity">Freshman train at the same facility as JV/Varsity but on a <strong>different sub-schedule.</strong> This tab shows exactly where your Freshman needs to be and when they are DONE each day.</div></div>
+<!-- ═══════════════════════════════════════
+     FRESHMAN
+═══════════════════════════════════════ -->
+<div class="panel" id="pf">
+<div class="ph">IMPORTANT NOTE FOR FRESHMAN FAMILIES</div>
+<div class="dc special"><div><div class="dd" style="color:#aa3333">⚠ READ THIS</div></div><div class="da">Freshman train at the same facility as JV/Varsity but on a <strong>different sub-schedule.</strong> This tab shows exactly where your Freshman needs to be and when they are DONE each day.</div></div>
+<div class="ph">Phase 1 — Last Days of School (May 18–22)</div>
+<div class="dc off" data-date="2026-05-18"><div><div class="dd">Mon–Thu May 18–21</div><div class="dt">FROSH OFF</div></div><div class="da"><strong>Freshman do NOT report.</strong> JV/Varsity have meetings/weight room — Freshman excused.</div></div>
+<div class="dc"><div><div class="dd">Fri, May 22</div><div class="dt">6:00 PM</div><div class="dg">School clothes</div></div><div class="da"><strong>Graduation Ceremony</strong></div></div>
+<div class="dc off"><div><div class="dd">Sat–Mon May 23–25</div><div class="dt">OFF</div></div><div class="da">Memorial Day Weekend</div></div>
+<div class="ph">Phase 2 — Early Summer (May 26 – June 7)</div>
+<div class="dc training" data-date="2026-05-26"><div><div class="dd">Tue, May 26</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>☀ FIRST DAY OF SUMMER.</strong> Report to turf at 6:55 AM. Coach assigns Frosh to Bigs or Skill group. Done by 9:15 AM.</div></div>
+<div class="dc training"><div><div class="dd">Wed–Thu May 27–28 &amp; Mon–Thu June 1–4</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Report to turf at 6:55, join assigned group. Done by 9:15 AM. (Weekends OFF)</div></div>
+<div class="ph">Phase 3 — Competition &amp; Youth Camp (June 8–28)</div>
+<div class="dc training"><div><div class="dd">Mon–Thu June 8–11</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Morning training. Done by 9:15 AM.</div></div>
+<div class="dc off"><div><div class="dd">Fri June 12 &amp; Sat June 13</div><div class="dt">OFF</div></div><div class="da">ISU events are invite-only. Freshman: OFF both days.</div></div>
+<div class="dc training"><div><div class="dd">Mon–Thu June 15–18</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Morning training. Jun 15: gear check-in 9–10 AM. <strong>Select Freshman may be asked to help coach youth camp 10 AM–1 PM</strong> (coach will confirm).</div></div>
+<div class="dc off"><div><div class="dd">Fri–Sun June 19–21</div><div class="dt">OFF</div></div><div class="da">Weekend</div></div>
+<div class="dc training"><div><div class="dd">Mon–Tue June 22–23</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">Training continues</div></div>
+<div class="dc training"><div><div class="dd">Wed–Thu June 24–25</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>Freshman checkout gear.</strong> Weight room + turf training.</div></div>
+<div class="dc off"><div><div class="dd">Fri–Sun June 26–28</div><div class="dt">OFF</div></div><div class="da">Weekend</div></div>
+<div class="ph">Phase 4 — Pre-Camp Split Sessions (June 29 – July 5)</div>
+<div class="dc training"><div><div class="dd">Mon, June 29</div><div class="dt">6:55–7:25 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>Freshman on the GRASS field</strong> (JV/Varsity on the turf). Team work: Group O&amp;D, PUP, Team O vs D.</div></div>
+<div class="dc training"><div><div class="dd">Mon, June 29</div><div class="dt">7:30–8:20 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>Freshman in the weight room</strong> with the Bigs</div></div>
+<div class="dc off"><div><div class="dd">Mon, June 29</div><div class="dt">8:30 AM ← DONE</div></div><div class="da"><strong>FRESHMAN DONE FOR THE DAY at 8:30 AM.</strong></div></div>
+<div class="dc training"><div><div class="dd">Tue–Thu June 30–July 2</div><div class="dt">6:55–9:00 AM</div><div class="dg">BK Gear</div></div><div class="da">Weight room 6:55–7:50. Rotate to turf for speed &amp; agility. Done at 9:00 AM.</div></div>
+<div class="dc off"><div><div class="dd">Fri–Sun July 3–5</div><div class="dt">OFF</div></div><div class="da">4th of July Weekend</div></div>
+<div class="ph">⭐ Phase 5 — Black &amp; Blue Camp Week (July 6–16)</div>
+<div class="dc special"><div><div class="dd" style="color:#aa3333">★ NOTE</div></div><div class="da">JV/Varsity start at 6:25 AM Mon–Wed. <strong>Freshman still start at 6:55 AM — same as usual.</strong></div></div>
+<div class="dc training" data-date="2026-07-06"><div><div class="dd">Mon, July 6</div><div class="dt">6:55 AM start</div><div class="dg">BK Gear</div></div><div class="da">Freshman: Weight room at 6:55 AM</div></div>
+<div class="dc contact"><div><div class="dd">Mon, July 6</div><div class="dt">8:05–9:35 AM</div><div class="dg">BK Gear</div></div><div class="da">Freshman: Practice</div></div>
+<div class="dc training" data-date="2026-07-07"><div><div class="dd">Tue, July 7</div><div class="dt">6:55 AM start</div><div class="dg">BK Gear</div></div><div class="da">Freshman: Weight room at 6:55 AM</div></div>
+<div class="dc contact"><div><div class="dd">Tue, July 7</div><div class="dt">8:05–9:35 AM</div><div class="dg">HELMETS</div></div><div class="da">Freshman: Practice</div></div>
+<div class="dc training" data-date="2026-07-08"><div><div class="dd">Wed, July 8</div><div class="dt">6:55 AM start</div><div class="dg">BK Gear</div></div><div class="da">Freshman: Weight room at 6:55 AM</div></div>
+<div class="dc contact"><div><div class="dd">Wed, July 8</div><div class="dt">8:05–9:35 AM</div><div class="dg">HALF SHELL</div></div><div class="da">Freshman: Practice</div></div>
+<div class="dc scrimmage" data-date="2026-07-09"><div><div class="dd">Thu, July 9</div><div class="dt">6:55–9:00 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels vs Timberline @ BK</strong><br><span class="note">Frosh: Film 9:20 · Lift 10:10–11:00 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc special" data-date="2026-07-09b"><div><div class="dd">Thu, July 9</div><div class="dt">5:30–9:30 PM</div><div class="dg">Luau attire</div></div><div class="da"><strong>🌺 KNIGHTS OF THE GRIDIRON LUAU — ALL PARENTS ATTEND.</strong></div></div>
+<div class="dc scrimmage" data-date="2026-07-10"><div><div class="dd">Fri, July 10</div><div class="dt">6:55–9:40 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels vs Timberline &amp; Meridian @ BK</strong><br><span class="note">Snack 9:45 · Film 10:00–10:30 · Done 10:45</span></div></div>
+<div class="dc off"><div><div class="dd">Sat–Sun July 11–12</div><div class="dt">OFF</div></div><div class="da">Weekend</div></div>
+<div class="dc scrimmage" data-date="2026-07-13"><div><div class="dd">Mon, July 13</div><div class="dt">6:55–9:00 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels @ Meridian vs Meridian</strong><br><span class="note">Frosh: Film 9:20 · Lift 10:10–11:00 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc scrimmage" data-date="2026-07-14"><div><div class="dd">Tue, July 14</div><div class="dt">6:55–9:40 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels vs Timberline @ BK</strong><br><span class="note">Frosh: Film 9:20 · Lift 10:10–11:00 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc contact"><div><div class="dd">Wed, July 15</div><div class="dt">6:55–9:30 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>Freshman: Practice vs themselves</strong> (BK on own today)</div></div>
+<div class="dc training"><div><div class="dd">Wed, July 15</div><div class="dt">9:30–10:00 AM</div><div class="dg">BK Gear</div></div><div class="da">Freshman: Lift</div></div>
+<div class="dc training"><div><div class="dd">Wed, July 15</div><div class="dt">10:15–11:00 AM</div><div class="dg">BK Gear</div></div><div class="da">Freshman: Watch film · Lunch 11:00</div></div>
+<div class="dc special"><div><div class="dd">Wed, July 15</div><div class="dt">12:00–3:00 PM</div><div class="dg">Swimsuits!</div></div><div class="da"><strong>🏊 All-team activity</strong></div></div>
+<div class="dc scrimmage" data-date="2026-07-16"><div><div class="dd">Thu, July 16</div><div class="dt">6:55–9:40 AM</div><div class="dg">FULL PADS</div></div><div class="da"><strong>All Levels @ BK vs Timberline &amp; Meridian</strong><br><span class="note">Frosh: Film 9:20 · Lift 10:10–11:00 · Lunch 11:00 · Done 11:30</span></div></div>
+<div class="dc off"><div><div class="dd">Fri–Sun July 17–19</div><div class="dt">OFF</div></div><div class="da">Weekend</div></div>
+<div class="ph">Phase 6 — Late Summer &amp; Night of Knights (July 20 – Aug 9)</div>
+<div class="dc training" data-date="2026-07-20"><div><div class="dd">Mon–Thu July 20–23</div><div class="dt">6:55–9:15 AM</div><div class="dg">BK Gear</div></div><div class="da">All levels train together. Weekends OFF.</div></div>
+<div class="dc training" data-date="2026-07-27"><div><div class="dd">Mon, July 27</div><div class="dt">6:55–7:55 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>Freshman: Testing</strong> 6:55–7:55 AM</div></div>
+<div class="dc training"><div><div class="dd">Mon, July 27</div><div class="dt">8:00–9:00 AM</div><div class="dg">BK Gear</div></div><div class="da">Freshman on field — football work</div></div>
+<div class="dc training" data-date="2026-07-28"><div><div class="dd">Tue, July 28</div><div class="dt">6:55–7:55 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>Freshman: Testing</strong> 6:55–7:55 AM</div></div>
+<div class="dc training" data-date="2026-07-29"><div><div class="dd">Wed, July 29</div><div class="dt">6:55–8:35 AM</div><div class="dg">BK Gear</div></div><div class="da">Freshman on field — football work</div></div>
+<div class="dc special"><div><div class="dd">Wed, July 29</div><div class="dt">TBD Evening</div></div><div class="da"><strong>🗡 Freshman Night of Knights — Testing @ OTF</strong> (details TBD)</div></div>
+<div class="dc training" data-date="2026-07-30"><div><div class="dd">Thu, July 30</div><div class="dt">6:55–9:00 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>🏁 LAST DAY OF SUMMER WORKOUTS.</strong> Team Activity @ Camel's Back Park.</div></div>
+<div class="dc scrimmage"><div><div class="dd">Thu, July 30</div><div class="dt">8:00–9:30 AM</div><div class="dg">BK Gear</div></div><div class="da"><strong>Freshman Competition</strong> @ BK or Camel's Back (TBD)</div></div>
+<div class="dc off"><div><div class="dd">Fri July 31–Sun Aug 9</div><div class="dt">DEAD WEEK — OFF</div></div><div class="da">No practice. Rest before Fall Camp.</div></div>
+<div class="ph">Fall Ramp-Up — August</div>
+<div class="dc special" data-date="2026-08-07"><div><div class="dd">Fri, Aug 7</div></div><div class="da"><strong>⭐ FRESHMAN ORIENTATION DAY</strong></div></div>
+<div class="dc training" data-date="2026-08-10"><div><div class="dd">Mon, Aug 10</div><div class="dt">6:50 AM start</div></div><div class="da"><strong>🏈 FALL CAMP BEGINS.</strong> Mon–Sat. Full schedule to follow.</div></div>
+<div class="dc" data-date="2026-08-13"><div><div class="dd">Wed, Aug 13</div></div><div class="da">Freshman School Orientation</div></div>
+<div class="dc special" data-date="2026-08-14"><div><div class="dd">Fri, Aug 14</div></div><div class="da"><strong>🏫 FIRST DAY OF SCHOOL</strong></div></div>
+<div class="dc scrimmage" data-date="2026-08-20"><div><div class="dd">Thu, Aug 20</div></div><div class="da"><strong>Black &amp; Gold Scrimmage</strong> — Freshman vs JV + select Varsity</div></div>
+<div class="dc special" data-date="2026-08-22"><div><div class="dd">Sat, Aug 22</div><div class="dt">AM</div></div><div class="da"><strong>🥂 Misses &amp; Mimosas</strong> @ BK — parent event</div></div>
+<div class="dc scrimmage" data-date="2026-08-27"><div><div class="dd">Thu, Aug 27</div></div><div class="da"><strong>Freshman vs Emmett</strong> — location TBD</div></div>
+</div><!-- /freshman -->
 
-  <div class="phase-header">Phase 1 — Last Days of School (May 18–22)</div>
-  <div class="day-card off" data-date="2026-05-18"><div><div class="day-date">Mon–Thu May 18–21</div><div class="day-time">FROSH OFF</div></div><div class="day-activity"><strong>Freshman do NOT report.</strong> JV/Varsity have meetings/weight room — Freshman excused.</div></div>
-  <div class="day-card"><div><div class="day-date">Fri, May 22</div><div class="day-time">6:00 PM</div><div class="day-gear">School clothes</div></div><div class="day-activity"><strong>Graduation Ceremony</strong></div></div>
-  <div class="day-card off"><div><div class="day-date">Sat–Mon May 23–25</div><div class="day-time">OFF</div></div><div class="day-activity">Memorial Day Weekend</div></div>
-
-  <div class="phase-header">Phase 2 — Early Summer (May 26 – June 7)</div>
-  <div class="day-card training" data-date="2026-05-26"><div><div class="day-date">Tue, May 26</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>☀ FIRST DAY OF SUMMER.</strong> Report to turf at 6:55 AM. Coach assigns Frosh to Bigs or Skill group. Done by 9:15 AM.</div></div>
-  <div class="day-card training"><div><div class="day-date">Wed–Thu May 27–28 &amp; Mon–Thu June 1–4</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Same structure — report to turf at 6:55, join assigned group. Done by 9:15 AM. (Weekends OFF)</div></div>
-
-  <div class="phase-header">Phase 3 — Competition &amp; Youth Camp (June 8–28)</div>
-  <div class="day-card training"><div><div class="day-date">Mon–Thu June 8–11</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Morning training. Done by 9:15 AM.</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri June 12 &amp; Sat June 13</div><div class="day-time">OFF</div></div><div class="day-activity">ISU events are invite-only. Freshman: OFF both days.</div></div>
-  <div class="day-card training"><div><div class="day-date">Mon–Thu June 15–18</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Morning training. Jun 15: gear check-in 9–10 AM. <strong>Select Freshman may be asked to help coach youth camp 10 AM–1 PM</strong> (coach will tell you if needed).</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri–Sun June 19–21</div><div class="day-time">OFF</div></div><div class="day-activity">Weekend</div></div>
-  <div class="day-card training"><div><div class="day-date">Mon–Tue June 22–23</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Training continues</div></div>
-  <div class="day-card training"><div><div class="day-date">Wed–Thu June 24–25</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>Freshman checkout gear.</strong> Weight room + turf training.</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri–Sun June 26–28</div><div class="day-time">OFF</div></div><div class="day-activity">Weekend</div></div>
-
-  <div class="phase-header">Phase 4 — Pre-Camp Split Sessions (June 29 – July 5)</div>
-  <div class="day-card training"><div><div class="day-date">Mon, June 29</div><div class="day-time">6:55–7:25 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>Freshman on the GRASS field</strong> (JV/Varsity on the turf). Team work: Group O&amp;D, PUP, Team O vs D.</div></div>
-  <div class="day-card training"><div><div class="day-date">Mon, June 29</div><div class="day-time">7:30–8:20 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>Freshman in the weight room</strong> with the Bigs</div></div>
-  <div class="day-card off"><div><div class="day-date">Mon, June 29</div><div class="day-time">8:30 AM ← DONE</div></div><div class="day-activity"><strong>FRESHMAN DONE FOR THE DAY at 8:30 AM.</strong></div></div>
-  <div class="day-card training"><div><div class="day-date">Tue–Thu June 30–July 2</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Weight room 6:55–7:50. Rotate to turf for speed &amp; agility. Done at 9:00 AM.</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri–Sun July 3–5</div><div class="day-time">OFF</div></div><div class="day-activity">4th of July Weekend</div></div>
-
-  <div class="phase-header">⭐ Phase 5 — Black &amp; Blue Camp Week (July 6–16)</div>
-  <div class="day-card special"><div><div class="day-date" style="color:#aa3333">★ NOTE</div></div><div class="day-activity">JV/Varsity start at 6:25 AM this week (Mon–Wed). <strong>Freshman still start at 6:55 AM — same as usual.</strong></div></div>
-  <div class="day-card training" data-date="2026-07-06"><div><div class="day-date">Mon, July 6</div><div class="day-time">6:55 AM start</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Freshman: Weight room at 6:55 AM</div></div>
-  <div class="day-card contact"><div><div class="day-date">Mon, July 6</div><div class="day-time">8:05–9:35 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Freshman: Practice</div></div>
-  <div class="day-card training" data-date="2026-07-07"><div><div class="day-date">Tue, July 7</div><div class="day-time">6:55 AM start</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Freshman: Weight room at 6:55 AM</div></div>
-  <div class="day-card contact"><div><div class="day-date">Tue, July 7</div><div class="day-time">8:05–9:35 AM</div><div class="day-gear">HELMETS</div></div><div class="day-activity">Freshman: Practice</div></div>
-  <div class="day-card training" data-date="2026-07-08"><div><div class="day-date">Wed, July 8</div><div class="day-time">6:55 AM start</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Freshman: Weight room at 6:55 AM</div></div>
-  <div class="day-card contact"><div><div class="day-date">Wed, July 8</div><div class="day-time">8:05–9:35 AM</div><div class="day-gear">HALF SHELL</div></div><div class="day-activity">Freshman: Practice</div></div>
-  <div class="day-card scrimmage" data-date="2026-07-09"><div><div class="day-date">Thu, July 9</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>All Levels vs Timberline @ BK</strong><br><span class="note">Frosh: Film 9:20 · Lift 10:10–11:00 · Lunch 11:00 · Done 11:30</span></div></div>
-  <div class="day-card special" data-date="2026-07-09b"><div><div class="day-date">Thu, July 9</div><div class="day-time">5:30–9:30 PM</div><div class="day-gear">Luau attire</div></div><div class="day-activity"><strong>🌺 KNIGHTS OF THE GRIDIRON LUAU — ALL PARENTS ATTEND.</strong></div></div>
-  <div class="day-card scrimmage" data-date="2026-07-10"><div><div class="day-date">Fri, July 10</div><div class="day-time">6:55–9:40 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>All Levels vs Timberline &amp; Meridian @ BK</strong><br><span class="note">Snack 9:45 · Film 10:00–10:30 · Done 10:45</span></div></div>
-  <div class="day-card off"><div><div class="day-date">Sat–Sun July 11–12</div><div class="day-time">OFF</div></div><div class="day-activity">Weekend</div></div>
-  <div class="day-card scrimmage" data-date="2026-07-13"><div><div class="day-date">Mon, July 13</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>All Levels @ Meridian vs Meridian</strong><br><span class="note">Frosh: Film 9:20 · Lift 10:10–11:00 · Lunch 11:00 · Done 11:30</span></div></div>
-  <div class="day-card scrimmage" data-date="2026-07-14"><div><div class="day-date">Tue, July 14</div><div class="day-time">6:55–9:40 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>All Levels vs Timberline @ BK</strong><br><span class="note">Frosh: Film 9:20 · Lift 10:10–11:00 · Lunch 11:00 · Done 11:30</span></div></div>
-  <div class="day-card contact"><div><div class="day-date">Wed, July 15</div><div class="day-time">6:55–9:30 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>Freshman: Practice vs themselves</strong> (BK on own today)</div></div>
-  <div class="day-card training"><div><div class="day-date">Wed, July 15</div><div class="day-time">9:30–10:00 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Freshman: Lift</div></div>
-  <div class="day-card training"><div><div class="day-date">Wed, July 15</div><div class="day-time">10:15–11:00 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Freshman: Watch film · Lunch 11:00</div></div>
-  <div class="day-card special"><div><div class="day-date">Wed, July 15</div><div class="day-time">12:00–3:00 PM</div><div class="day-gear">Swimsuits!</div></div><div class="day-activity"><strong>🏊 All-team activity</strong></div></div>
-  <div class="day-card scrimmage" data-date="2026-07-16"><div><div class="day-date">Thu, July 16</div><div class="day-time">6:55–9:40 AM</div><div class="day-gear">FULL PADS</div></div><div class="day-activity"><strong>All Levels @ BK vs Timberline &amp; Meridian</strong><br><span class="note">Frosh: Film 9:20 · Lift 10:10–11:00 · Lunch 11:00 · Done 11:30</span></div></div>
-  <div class="day-card off"><div><div class="day-date">Fri–Sun July 17–19</div><div class="day-time">OFF</div></div><div class="day-activity">Weekend</div></div>
-
-  <div class="phase-header">Phase 6 — Late Summer &amp; Night of Knights (July 20 – Aug 9)</div>
-  <div class="day-card training" data-date="2026-07-20"><div><div class="day-date">Mon–Thu July 20–23</div><div class="day-time">6:55–9:15 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">All levels train together. Weekends OFF.</div></div>
-  <div class="day-card training" data-date="2026-07-27"><div><div class="day-date">Mon, July 27</div><div class="day-time">6:55–7:55 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>Freshman: Testing</strong> 6:55–7:55 AM</div></div>
-  <div class="day-card training"><div><div class="day-date">Mon, July 27</div><div class="day-time">8:00–9:00 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Freshman on field — football work</div></div>
-  <div class="day-card training" data-date="2026-07-28"><div><div class="day-date">Tue, July 28</div><div class="day-time">6:55–7:55 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>Freshman: Testing</strong> 6:55–7:55 AM</div></div>
-  <div class="day-card training" data-date="2026-07-29"><div><div class="day-date">Wed, July 29</div><div class="day-time">6:55–8:35 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity">Freshman on field — football work</div></div>
-  <div class="day-card special"><div><div class="day-date">Wed, July 29</div><div class="day-time">TBD Evening</div></div><div class="day-activity"><strong>🗡 Freshman Night of Knights — Testing @ OTF</strong> (details TBD)</div></div>
-  <div class="day-card training" data-date="2026-07-30"><div><div class="day-date">Thu, July 30</div><div class="day-time">6:55–9:00 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>🏁 LAST DAY OF SUMMER WORKOUTS.</strong> Team Activity @ Camel's Back Park.</div></div>
-  <div class="day-card scrimmage"><div><div class="day-date">Thu, July 30</div><div class="day-time">8:00–9:30 AM</div><div class="day-gear">BK Gear</div></div><div class="day-activity"><strong>Freshman Competition</strong> @ BK or Camel's Back (TBD)</div></div>
-  <div class="day-card off"><div><div class="day-date">Fri July 31–Sun Aug 9</div><div class="day-time">DEAD WEEK — OFF</div></div><div class="day-activity">No practice. Rest before Fall Camp.</div></div>
-
-  <div class="phase-header">Fall Ramp-Up — August</div>
-  <div class="day-card special" data-date="2026-08-07"><div><div class="day-date">Fri, Aug 7</div></div><div class="day-activity"><strong>⭐ FRESHMAN ORIENTATION DAY</strong></div></div>
-  <div class="day-card training" data-date="2026-08-10"><div><div class="day-date">Mon, Aug 10</div><div class="day-time">6:50 AM start</div></div><div class="day-activity"><strong>🏈 FALL CAMP BEGINS.</strong> Mon–Sat. Full schedule to follow.</div></div>
-  <div class="day-card" data-date="2026-08-13"><div><div class="day-date">Wed, Aug 13</div></div><div class="day-activity">Freshman School Orientation</div></div>
-  <div class="day-card special" data-date="2026-08-14"><div><div class="day-date">Fri, Aug 14</div></div><div class="day-activity"><strong>🏫 FIRST DAY OF SCHOOL</strong></div></div>
-  <div class="day-card scrimmage" data-date="2026-08-20"><div><div class="day-date">Thu, Aug 20</div></div><div class="day-activity"><strong>Black &amp; Gold Scrimmage</strong> — Freshman vs JV + select Varsity</div></div>
-  <div class="day-card special" data-date="2026-08-22"><div><div class="day-date">Sat, Aug 22</div><div class="day-time">AM</div></div><div class="day-activity"><strong>🥂 Misses &amp; Mimosas</strong> @ BK — parent event</div></div>
-  <div class="day-card scrimmage" data-date="2026-08-27"><div><div class="day-date">Thu, Aug 27</div></div><div class="day-activity"><strong>Freshman vs Emmett</strong> — location TBD</div></div>
-</div><!-- /frosh -->
-
-<!-- ══════════════════════════════════════════════════════════ -->
-<!--  GAMES PANEL                                               -->
-<!-- ══════════════════════════════════════════════════════════ -->
-<div class="level-panel" id="panel-games">
-
-  <div class="games-header">
-    <div class="games-title">🏈 2026 Game Schedule</div>
-    <div class="games-subtitle">Varsity Football · Bishop Kelly Knights</div>
-  </div>
-
-  <div class="games-legend">
-    <div class="games-legend-item"><div class="home-dot"></div> Home Game</div>
-    <div class="games-legend-item"><div class="away-dot"></div> Away Game</div>
-  </div>
-
-  <!-- Game 1 -->
-  <div class="game-card home-game" data-gamedate="2026-08-28" id="game1">
-    <div class="game-date-block">
-      <div class="game-month">Aug</div>
-      <div class="game-day">28</div>
-      <div class="game-dow">Friday</div>
-    </div>
-    <div class="game-info">
-      <div class="game-opponent">Aquinas (CA)</div>
-      <div class="game-location">📍 Bishop Kelly — Home</div>
-      <div class="game-time">⏰ Time TBD</div>
-    </div>
-    <div>
-      <div class="game-badge badge-home">HOME</div>
-      <div class="game-badge badge-next" id="opener-badge" style="margin-top:4px;display:none">OPENER</div>
-    </div>
-  </div>
-
-  <!-- Game 2 -->
-  <div class="game-card away-game" data-gamedate="2026-09-04">
-    <div class="game-date-block">
-      <div class="game-month">Sep</div>
-      <div class="game-day">4</div>
-      <div class="game-dow">Friday</div>
-    </div>
-    <div class="game-info">
-      <div class="game-opponent">Summit (OR)</div>
-      <div class="game-location">✈️ Away</div>
-      <div class="game-time">⏰ Time TBD</div>
-    </div>
-    <div><div class="game-badge badge-away">AWAY</div></div>
-  </div>
-
-  <!-- Game 3 -->
-  <div class="game-card home-game" data-gamedate="2026-09-11">
-    <div class="game-date-block">
-      <div class="game-month">Sep</div>
-      <div class="game-day">11</div>
-      <div class="game-dow">Friday</div>
-    </div>
-    <div class="game-info">
-      <div class="game-opponent">Centennial</div>
-      <div class="game-location">📍 Bishop Kelly — Home</div>
-      <div class="game-time">⏰ Time TBD</div>
-    </div>
-    <div><div class="game-badge badge-home">HOME</div></div>
-  </div>
-
-  <!-- Game 4 -->
-  <div class="game-card away-game" data-gamedate="2026-09-18">
-    <div class="game-date-block">
-      <div class="game-month">Sep</div>
-      <div class="game-day">18</div>
-      <div class="game-dow">Friday</div>
-    </div>
-    <div class="game-info">
-      <div class="game-opponent">Vallivue</div>
-      <div class="game-location">✈️ Away</div>
-      <div class="game-time">⏰ Time TBD</div>
-    </div>
-    <div><div class="game-badge badge-away">AWAY</div></div>
-  </div>
-
-  <!-- Game 5 -->
-  <div class="game-card home-game" data-gamedate="2026-09-25">
-    <div class="game-date-block">
-      <div class="game-month">Sep</div>
-      <div class="game-day">25</div>
-      <div class="game-dow">Friday</div>
-    </div>
-    <div class="game-info">
-      <div class="game-opponent">Middleton</div>
-      <div class="game-location">📍 Bishop Kelly — Home</div>
-      <div class="game-time">⏰ Time TBD</div>
-    </div>
-    <div><div class="game-badge badge-home">HOME</div></div>
-  </div>
-
-  <!-- Game 6 -->
-  <div class="game-card away-game" data-gamedate="2026-10-02">
-    <div class="game-date-block">
-      <div class="game-month">Oct</div>
-      <div class="game-day">2</div>
-      <div class="game-dow">Friday</div>
-    </div>
-    <div class="game-info">
-      <div class="game-opponent">Columbia</div>
-      <div class="game-location">✈️ Away</div>
-      <div class="game-time">⏰ Time TBD</div>
-    </div>
-    <div><div class="game-badge badge-away">AWAY</div></div>
-  </div>
-
-  <!-- Game 7 -->
-  <div class="game-card home-game" data-gamedate="2026-10-09">
-    <div class="game-date-block">
-      <div class="game-month">Oct</div>
-      <div class="game-day">9</div>
-      <div class="game-dow">Friday</div>
-    </div>
-    <div class="game-info">
-      <div class="game-opponent">Ridgevue</div>
-      <div class="game-location">📍 Bishop Kelly — Home</div>
-      <div class="game-time">⏰ Time TBD</div>
-    </div>
-    <div><div class="game-badge badge-home">HOME</div></div>
-  </div>
-
-  <!-- Game 8 -->
-  <div class="game-card away-game" data-gamedate="2026-10-16">
-    <div class="game-date-block">
-      <div class="game-month">Oct</div>
-      <div class="game-day">16</div>
-      <div class="game-dow">Friday</div>
-    </div>
-    <div class="game-info">
-      <div class="game-opponent">Skyview</div>
-      <div class="game-location">✈️ Away</div>
-      <div class="game-time">⏰ Time TBD</div>
-    </div>
-    <div><div class="game-badge badge-away">AWAY</div></div>
-  </div>
-
-  <!-- Game 9 -->
-  <div class="game-card home-game" data-gamedate="2026-10-23">
-    <div class="game-date-block">
-      <div class="game-month">Oct</div>
-      <div class="game-day">23</div>
-      <div class="game-dow">Friday</div>
-    </div>
-    <div class="game-info">
-      <div class="game-opponent">Nampa</div>
-      <div class="game-location">📍 Bishop Kelly — Home</div>
-      <div class="game-time">⏰ Time TBD</div>
-    </div>
-    <div><div class="game-badge badge-home">HOME</div></div>
-  </div>
-
-  <!-- Playoffs -->
-  <div class="playoffs-card">
-    <div class="pl-title">🏆 PLAYOFFS</div>
-    <div class="pl-sub">Idaho High School Activities Association<br>Date &amp; Location — TBD<br><br><span style="color:#c8a84b;font-weight:700">Go Knights!</span></div>
-  </div>
-
-  <div class="games-record">
-    <b>5 Home Games</b> &nbsp;·&nbsp; <b>4 Away Games</b> &nbsp;·&nbsp; Season opens <b>Aug 28 vs Aquinas</b>
-  </div>
-
-</div><!-- /games -->
-
-<!-- ══ FOOTER ══ -->
-<div class="app-footer">
-  <strong style="color:var(--gold)">Bishop Kelly Knights Football</strong><br>
-  <a href="mailto:cculig@bk.org">cculig@bk.org</a> &nbsp;·&nbsp; (208) 375-6010 &nbsp;·&nbsp; @BKKnightsFB<br>
-  <span style="color:#667">Schedule verified from source · Last updated April 2026</span>
+<!-- ═══════════════════════════════════════
+     GAMES — CORRECTED PER DAN'S LIST
+     HOME: Aquinas, Summit, Vallivue, Columbia, Skyview
+     AWAY: Centennial, Middleton, Ridgevue, Nampa
+═══════════════════════════════════════ -->
+<div class="panel" id="pg">
+<div class="ghdr">
+  <div class="gtitle">🏈 2026 Game Schedule</div>
+  <div class="gsub">Varsity Football · Bishop Kelly Knights</div>
+</div>
+<div class="gleg">
+  <div class="gli"><div class="hdot"></div>Home Game — Bishop Kelly</div>
+  <div class="gli"><div class="adot"></div>Away Game</div>
 </div>
 
-<!-- ══ JAVASCRIPT ══ -->
+<!-- Aug 28 HOME vs Aquinas -->
+<div class="gc home" data-gamedate="2026-08-28">
+  <div class="gdb"><div class="gmo">Aug</div><div class="gdy">28</div><div class="gdw">Friday</div></div>
+  <div><div class="gopp">Aquinas (CA)</div><div class="gloc">📍 Bishop Kelly — Home</div><div class="gtm">⏰ Time TBD</div></div>
+  <div><span class="gbadge bh">HOME</span></div>
+</div>
+
+<!-- Sept 4 HOME vs Summit -->
+<div class="gc home" data-gamedate="2026-09-04">
+  <div class="gdb"><div class="gmo">Sep</div><div class="gdy">4</div><div class="gdw">Friday</div></div>
+  <div><div class="gopp">Summit (OR)</div><div class="gloc">📍 Bishop Kelly — Home</div><div class="gtm">⏰ Time TBD</div></div>
+  <div><span class="gbadge bh">HOME</span></div>
+</div>
+
+<!-- Sept 11 AWAY vs Centennial -->
+<div class="gc away" data-gamedate="2026-09-11">
+  <div class="gdb"><div class="gmo">Sep</div><div class="gdy">11</div><div class="gdw">Friday</div></div>
+  <div><div class="gopp">Centennial</div><div class="gloc">✈️ Away</div><div class="gtm">⏰ Time TBD</div></div>
+  <div><span class="gbadge ba">AWAY</span></div>
+</div>
+
+<!-- Sept 18 HOME vs Vallivue -->
+<div class="gc home" data-gamedate="2026-09-18">
+  <div class="gdb"><div class="gmo">Sep</div><div class="gdy">18</div><div class="gdw">Friday</div></div>
+  <div><div class="gopp">Vallivue</div><div class="gloc">📍 Bishop Kelly — Home</div><div class="gtm">⏰ Time TBD</div></div>
+  <div><span class="gbadge bh">HOME</span></div>
+</div>
+
+<!-- Sept 25 AWAY vs Middleton -->
+<div class="gc away" data-gamedate="2026-09-25">
+  <div class="gdb"><div class="gmo">Sep</div><div class="gdy">25</div><div class="gdw">Friday</div></div>
+  <div><div class="gopp">Middleton</div><div class="gloc">✈️ Away</div><div class="gtm">⏰ Time TBD</div></div>
+  <div><span class="gbadge ba">AWAY</span></div>
+</div>
+
+<!-- Oct 2 HOME vs Columbia -->
+<div class="gc home" data-gamedate="2026-10-02">
+  <div class="gdb"><div class="gmo">Oct</div><div class="gdy">2</div><div class="gdw">Friday</div></div>
+  <div><div class="gopp">Columbia</div><div class="gloc">📍 Bishop Kelly — Home</div><div class="gtm">⏰ Time TBD</div></div>
+  <div><span class="gbadge bh">HOME</span></div>
+</div>
+
+<!-- Oct 9 AWAY vs Ridgevue -->
+<div class="gc away" data-gamedate="2026-10-09">
+  <div class="gdb"><div class="gmo">Oct</div><div class="gdy">9</div><div class="gdw">Friday</div></div>
+  <div><div class="gopp">Ridgevue</div><div class="gloc">✈️ Away</div><div class="gtm">⏰ Time TBD</div></div>
+  <div><span class="gbadge ba">AWAY</span></div>
+</div>
+
+<!-- Oct 16 HOME vs Skyview -->
+<div class="gc home" data-gamedate="2026-10-16">
+  <div class="gdb"><div class="gmo">Oct</div><div class="gdy">16</div><div class="gdw">Friday</div></div>
+  <div><div class="gopp">Skyview</div><div class="gloc">📍 Bishop Kelly — Home</div><div class="gtm">⏰ Time TBD</div></div>
+  <div><span class="gbadge bh">HOME</span></div>
+</div>
+
+<!-- Oct 23 AWAY vs Nampa -->
+<div class="gc away" data-gamedate="2026-10-23">
+  <div class="gdb"><div class="gmo">Oct</div><div class="gdy">23</div><div class="gdw">Friday</div></div>
+  <div><div class="gopp">Nampa</div><div class="gloc">✈️ Away</div><div class="gtm">⏰ Time TBD</div></div>
+  <div><span class="gbadge ba">AWAY</span></div>
+</div>
+
+<!-- Playoffs -->
+<div class="playoffs">
+  <div class="pltitle">🏆 PLAYOFFS</div>
+  <div class="plsub">Idaho High School Activities Association<br>Date &amp; Location — TBD<br><br><span style="color:#c8a84b;font-weight:700">Go Knights! ⚔</span></div>
+</div>
+
+<div class="gstat"><b>5 Home Games</b> &nbsp;·&nbsp; <b>4 Away Games</b> &nbsp;·&nbsp; Season opens <b>Aug 28 vs Aquinas</b></div>
+</div><!-- /games -->
+
+<div class="ftr">
+  <strong style="color:var(--gold)">Bishop Kelly Knights Football</strong><br>
+  <a href="mailto:cculig@bk.org">cculig@bk.org</a> &nbsp;·&nbsp; (208) 375-6010 &nbsp;·&nbsp; @BKKnightsFB<br>
+  <span style="opacity:.5">Verified from source · Updated April 2026</span>
+</div>
+
 <script>
-  // ── TAB SWITCHING ─────────────────────────────────────────
-  function showLevel(level) {
-    document.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('panel-' + level).classList.add('active');
-    document.querySelector('.tab-btn.' + level).classList.add('active');
-
-    // Hide glossary/legend/print on games tab — not needed there
-    const isGames = level === 'games';
-    document.getElementById('glossaryWrap').style.display = isGames ? 'none' : '';
-    document.getElementById('colorLegend').style.display  = isGames ? 'none' : '';
-    document.getElementById('printBar').style.display     = isGames ? 'none' : '';
-
-    if (!isGames) highlightToday();
-    else highlightNextGame();
-  }
-
-  // ── GLOSSARY ──────────────────────────────────────────────
-  function toggleGlossary() {
-    const c = document.getElementById('glossaryContent');
-    const a = document.getElementById('glossArrow');
-    c.classList.toggle('open');
-    a.textContent = c.classList.contains('open') ? '▲' : '▼';
-  }
-
-  // ── TODAY HIGHLIGHT ───────────────────────────────────────
-  function highlightToday() {
-    document.querySelectorAll('.today-row').forEach(el => {
-      el.classList.remove('today-row');
-      const lbl = el.querySelector('.today-label');
-      if (lbl) lbl.remove();
-    });
-
-    const now = new Date();
-    const todayStr = now.getFullYear() + '-' +
-      String(now.getMonth()+1).padStart(2,'0') + '-' +
-      String(now.getDate()).padStart(2,'0');
-
-    const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    document.getElementById('todayBadge').textContent =
-      days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate();
-
-    const activePanel = document.querySelector('.level-panel.active');
-    if (!activePanel) return;
-
-    let found = false;
-    activePanel.querySelectorAll('[data-date]').forEach(card => {
-      const d = card.getAttribute('data-date').replace(/[bc]$/,'');
-      if (d === todayStr) {
-        card.classList.add('today-row');
-        if (!found) {
-          const lbl = document.createElement('div');
-          lbl.className = 'today-label';
-          lbl.textContent = '▶ TODAY';
-          card.querySelector('.day-date').prepend(lbl);
-          found = true;
-          setTimeout(() => card.scrollIntoView({behavior:'smooth', block:'center'}), 300);
-        }
+function show(l){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('p'+l).classList.add('active');
+  document.querySelector('.t'+l).classList.add('active');
+  var ig=l==='g';
+  document.getElementById('glossWrap').style.display=ig?'none':'';
+  document.getElementById('legWrap').style.display=ig?'none':'';
+  document.getElementById('pbWrap').style.display=ig?'none':'';
+  ig?markNextGame():markToday();
+}
+function toggleG(){
+  var c=document.getElementById('gcnt'),a=document.getElementById('garr');
+  c.classList.toggle('open');
+  a.textContent=c.classList.contains('open')?'▲':'▼';
+}
+function markToday(){
+  document.querySelectorAll('.today-row').forEach(e=>{
+    e.classList.remove('today-row');
+    var l=e.querySelector('.tl');if(l)l.remove();
+  });
+  var n=new Date();
+  var ts=n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0');
+  var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var mos=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  document.getElementById('tbadge').textContent=days[n.getDay()]+', '+mos[n.getMonth()]+' '+n.getDate();
+  var ap=document.querySelector('.panel.active');if(!ap)return;
+  var found=false;
+  ap.querySelectorAll('[data-date]').forEach(function(c){
+    var d=c.getAttribute('data-date').replace(/[bc]$/,'');
+    if(d===ts){
+      c.classList.add('today-row');
+      if(!found){
+        var l=document.createElement('div');l.className='tl';l.textContent='▶ TODAY';
+        c.querySelector('.dd').prepend(l);found=true;
+        setTimeout(function(){c.scrollIntoView({behavior:'smooth',block:'center'});},300);
       }
-    });
-  }
-
-  // ── NEXT GAME HIGHLIGHT ───────────────────────────────────
-  function highlightNextGame() {
-    const now = new Date();
-    now.setHours(0,0,0,0);
-    let nextCard = null;
-
-    document.querySelectorAll('[data-gamedate]').forEach(card => {
-      card.classList.remove('next-game');
-      const parts = card.getAttribute('data-gamedate').split('-');
-      const gDate = new Date(+parts[0], +parts[1]-1, +parts[2]);
-      if (!nextCard && gDate >= now) nextCard = card;
-    });
-
-    if (nextCard) {
-      nextCard.classList.add('next-game');
-      const badge = nextCard.querySelector('.game-badge');
-      if (badge) {
-        const nb = document.createElement('div');
-        nb.className = 'game-badge badge-next';
-        nb.textContent = 'NEXT';
-        nb.style.marginTop = '4px';
-        badge.parentNode.appendChild(nb);
-      }
-      setTimeout(() => nextCard.scrollIntoView({behavior:'smooth', block:'center'}), 300);
     }
+  });
+}
+function markNextGame(){
+  document.querySelectorAll('.gc').forEach(function(c){
+    c.classList.remove('nextgame');
+    var b=c.querySelector('.bn');if(b)b.remove();
+  });
+  var now=new Date();now.setHours(0,0,0,0);
+  var next=null;
+  document.querySelectorAll('[data-gamedate]').forEach(function(c){
+    var p=c.getAttribute('data-gamedate').split('-');
+    var gd=new Date(+p[0],+p[1]-1,+p[2]);
+    if(!next&&gd>=now)next=c;
+  });
+  if(next){
+    next.classList.add('nextgame');
+    var nb=document.createElement('span');nb.className='gbadge bn';nb.textContent='NEXT GAME';
+    next.querySelector('div:last-child').appendChild(nb);
+    setTimeout(function(){next.scrollIntoView({behavior:'smooth',block:'center'});},300);
   }
-
-  // ── PWA MANIFEST ──────────────────────────────────────────
-  const manifest = {
-    name: 'BK Knights Football 2026',
-    short_name: 'BK Football',
-    description: 'Bishop Kelly Knights 2026 Football Schedule',
-    start_url: '.',
-    display: 'standalone',
-    background_color: '#1a2744',
-    theme_color: '#1a2744',
-    icons: [{
-      src: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgZmlsbD0iIzFhMjc0NCIgcng9IjgwIi8+PHBhdGggZD0iTTI1NiA2MEwxMDAgMTQwdjE0MGMwIDkwIDY2IDE2OCAxNTYgMTk0IDkwLTI2IDE1Ni0xMDQgMTU2LTE5NFYxNDBMMjU2IDYweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzhhODRiIiBzdHJva2Utd2lkdGg9IjE2Ii8+PHRleHQgeD0iMjU2IiB5PSIyOTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjEzMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNjOGE4NGIiPkJLPC90ZXh0Pjx0ZXh0IHg9IjI1NiIgeT0iNDIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI1NSIgZmlsbD0id2hpdGUiPktOSUdIVFM8L3RleHQ+PC9zdmc+',
-      sizes: '512x512', type: 'image/svg+xml', purpose: 'any maskable'
-    }]
-  };
-  const blob = new Blob([JSON.stringify(manifest)], {type:'application/json'});
-  document.querySelector('link[rel="manifest"]') && (document.querySelector('link[rel="manifest"]').href = URL.createObjectURL(blob));
-  const ml = document.createElement('link');
-  ml.rel = 'manifest';
-  ml.href = URL.createObjectURL(blob);
-  document.head.appendChild(ml);
-
-  // ── INIT ──────────────────────────────────────────────────
-  highlightToday();
+}
+// PWA
+var mf={name:'BK Knights Football 2026',short_name:'BK Football',start_url:'.',display:'standalone',background_color:'#1a2744',theme_color:'#1a2744',icons:[{src:'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgZmlsbD0iIzFhMjc0NCIgcng9IjgwIi8+PHBhdGggZD0iTTI1NiA2MEwxMDAgMTQwdjE0MGMwIDkwIDY2IDE2OCAxNTYgMTk0IDkwLTI2IDE1Ni0xMDQgMTU2LTE5NFYxNDBMMjU2IDYweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzhhODRiIiBzdHJva2Utd2lkdGg9IjE2Ii8+PHRleHQgeD0iMjU2IiB5PSIyOTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjEzMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNjOGE4NGIiPkJLPC90ZXh0Pjx0ZXh0IHg9IjI1NiIgeT0iNDIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSI1NSIgZmlsbD0id2hpdGUiPktOSUdIVFM8L3RleHQ+PC9zdmc+',sizes:'512x512',type:'image/svg+xml',purpose:'any maskable'}]};
+var bl=new Blob([JSON.stringify(mf)],{type:'application/json'});
+var ml=document.createElement('link');ml.rel='manifest';ml.href=URL.createObjectURL(bl);
+document.head.appendChild(ml);
+markToday();
 </script>
 </body>
 </html>
